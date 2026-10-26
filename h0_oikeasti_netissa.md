@@ -26,13 +26,19 @@ Tiivistelmä artikkelista Partanen 2025: Harjoitus 5: Nimekäs: a) Nimi, luettav
 
 Aloitin debian 13 *trixien* asennuksen lataamalla sen iso-tiedoston osoitteesta https://www.debian.org/download .
 Virtualisointiympäristö missä tämä kone tulee pyörimään, on linux-pohjainen, vapaan lähdekoodin virtual machine manager. Hypervisorina toimii KVM,
-josta olen pitänyt. Tälle asialle nyt ei ole sen ihmeellisempää syytä kuin se, että läppärin host-käyttiksenä on linux mint, 
+josta olen pitänyt. Tälle asialle nyt ei ole muuta syytä kuin se, että läppärin host-käyttiksenä on linux mint, 
 ja virtual machine manager + KVM on toiminut hyvin.
 
 Asennus sujui varsin normaalisti, allokoin virtuaalikoneelle 6Gb muistia ja 4 prosessoria sekä 30Gb levytilaa. Graafisessa asennuksessa perus jutut kuten näppäimistön kieli
-tms tottakai vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa.
+tms tottakai vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa. Asennus onnistui ja ajoin vielä lopuksi komennon `sudo apt update && sudo apt full-upgrade -y && 
+sudo apt autoremove --purge && sudo apt clean` ajaekseni uusimmat päivitykset sisään ja poistaakseni turhat vanhentuneet paketit.
+
 
 ## b) VPS
+Kurssin ensimmäisellä oppitunnilla 22.10.2026 oli tunnin lopussa aikaa vuokrata vps. Päädyin itse UpCloudiin, sillä kysessä on suomalainen
+firma, ja itse palvelimen sai myös fyysisesti Suomesta. Myöskin hinta oli aikalailla samalla tasolla kuin muilla palveluntarjoajilla. Kuten kuvasta näkyy, palvelimen resurssien osalta menin halvimmalla mahdollisella vaihtoehdolla. Ehdin tunnilla myös generoimaan ssh-avainparin ja käymään palvelimella pääkäyttäjänä.
+
+<img width="1618" height="540" alt="image" src="https://github.com/user-attachments/assets/3eb88e33-2f98-4b7b-9906-e4ff149f772a" />
 
 
 
