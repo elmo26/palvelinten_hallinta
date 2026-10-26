@@ -30,7 +30,10 @@ josta olen pitänyt. Tälle asialle nyt ei ole sen ihmeellisempää syytä kuin 
 ja virtual machine manager + KVM on toiminut hyvin.
 
 Asennus sujui varsin normaalisti, allokoin virtuaalikoneelle 6Gb muistia ja 4 prosessoria sekä 30Gb levytilaa. Graafisessa asennuksessa perus jutut kuten näppäimistön kieli
-tms tottakai vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia.
+tms tottakai vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa.
+
+## b) VPS
+
 
 
 ## Lähteet
