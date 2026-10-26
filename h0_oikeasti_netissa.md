@@ -18,7 +18,7 @@ Tiivistelmä artikkelista Partanen 2025: Harjoitus 5: Nimekäs: a) Nimi, luettav
 
 * Namecheap tarjoaa halpoja domain-nimiä, muitakin kauppapaikkoja on.
 * Domainien kohdalla kannattaa katsoa kyseisen TLD:n (top level domain) koskevan säännöt ja palveluehdot,
-  sillä ne saattavat erota toisistaan domainista riippuen.
+  sillä ne saattavat erota toisistaan domainista riippuen. (oma lisäykseni)
 * Domaini saadaan osoittamaan haluamaamme ip-osoitteeseen namecheapin Domain list näkymästä, siten että määritellään
   A Record -kohtaan ip-osoite, johon haluamme viitata.
 
