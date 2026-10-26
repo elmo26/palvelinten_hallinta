@@ -22,6 +22,16 @@ Tiivistelmä artikkelista Partanen 2025: Harjoitus 5: Nimekäs: a) Nimi, luettav
 * Domaini saadaan osoittamaan haluamaamme ip-osoitteeseen namecheapin Domain list näkymästä, siten että määritellään
   A Record -kohtaan ip-osoite, johon haluamme viitata.
 
+## a) Paikallista
+
+Aloitin debian 13 *trixien* asennuksen lataamalla sen iso-tiedoston osoitteesta https://www.debian.org/download .
+Virtualisointiympäristö missä tämä kone tulee pyörimään, on linux-pohjainen, vapaan lähdekoodin virtual machine manager. Hypervisorina toimii KVM,
+josta olen pitänyt. Tälle asialle nyt ei ole sen ihmeellisempää syytä kuin se, että läppärin host-käyttiksenä on linux mint, 
+ja virtual machine manager + KVM on toiminut hyvin.
+
+Asennus sujui varsin normaalisti, allokoin virtuaalikoneelle 6Gb muistia ja 4 prosessoria sekä 30Gb levytilaa. Graafisessa asennuksessa perus jutut kuten näppäimistön kieli
+tms tottakai vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia.
+
 
 ## Lähteet
 Karvinen, T.2026 Palvelinten Hallinta. Luettavissa: https://terokarvinen.com/palvelinten-hallinta/ Luettu 26.10.2026
