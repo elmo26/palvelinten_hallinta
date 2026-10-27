@@ -46,13 +46,13 @@ firma, ja itse palvelimen sai myös fyysisesti Suomesta. Myöskin hinta oli aika
 
 ## c) Alkutoimet
 
-Otin ssh-yhteyden palvelimeeni pääkäyttäjänä komennolla `ssh root@ip` ja tein itselleni uuden normaalikäyttäjän, ja lisäsin samalla sudo-oikeuden käyttäjälle komennoilla `adduser elmo && adduser elmo sudo`.
-Tämän jälkeen ajoin komennot `cp -R .ssh /home/elmo/`, `chown -R elmo:elmo /home/elmo`. Ensimmäinen komento kopioi .ssh-kansion elmo-käyttäjän kotihakemistoon, jälkimmäinen komento vaihtaa /home/elmo kansion ja sen sisältöjen omistuksen käyttäjälle elmo ja ryhmään elmo. Tämän jälkeen kokeilin poistua serveriltä ja ottaa ssh-yhteyden suoraan elmo-käyttäjälle, joka onnistui hyvin.
+Otin ssh-yhteyden palvelimeeni pääkäyttäjänä komennolla `ssh root@ip` ja tein itselleni uuden normaalikäyttäjän "elmo", ja lisäsin samalla sudo-oikeuden käyttäjälle komennoilla `adduser elmo && adduser elmo sudo`.
+Tämän jälkeen ajoin komennot `cp -R .ssh /home/elmo/`, `chown -R elmo:elmo /home/elmo`. Ensimmäinen komento kopioi .ssh-kansion elmo-käyttäjän kotihakemistoon rootin kotihakemistosta, jälkimmäinen komento vaihtaa /home/elmo kansion ja sen sisältöjen omistuksen käyttäjälle elmo ja ryhmään elmo. Tämän jälkeen kokeilin poistua serveriltä ja ottaa ssh-yhteyden suoraan elmo-käyttäjälle, joka onnistui hyvin.
 
 Päivitin koneen ja poistin turhat riippuvuudet komennolla `sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove --purge && sudo apt clean`. Tämän jälkeen asensin palomuurin komennolla 
 `sudo apt install ufw`, avasin ssh:n käytön (tcp/22) komennolla `sudo ufw allow ssh` ja ajoin palomuurin käyttöön komennolla `sudo ufw enable`. Tämän jälkeen boottasin koneen komennolla `sudo reboot`
 
-Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root`.
+Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root` ja 
 
 ## d) Weppipalvelin
 
