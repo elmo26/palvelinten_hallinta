@@ -10,7 +10,7 @@ Tiivistelmä artikkelista: Niemi 2025: H4 Tehtävät, luettavissa: https://githu
   mikäli ssh-tiedostojen oikeudet ovat liian avoimet.
 * sudoers oikeudet uudelle käyttäjälle `add "kayttaja" sudo`, julkisen avaimen kopioniti käyttäjän kotihakemistoon rootin kotihakemistosta.
 * Palomuurin asennus: `sudo apt install ufw`, palomuuriin reikä ssh:lle `sudo ufw allow ssh`, palomuuri päälle `sudo ufw enable`
-* Huom portti 22 on avattava ssh:lle ennen ufw:n päälle laittamista, jotta ei lukitse itseään ulos. [s.a. a](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu)
+* Huom portti 22 on avattava ssh:lle ennen ufw:n päälle laittamista, jotta ei lukitse itseään ulos. [DigitalOcean 19.9.2025](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu)
 * Palvelimen asennuksesen jälkeen pitää muistaa sallia portti 80, jotta liikenne pääsee läpi sivulle asti.
 
 
