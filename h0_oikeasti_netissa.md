@@ -5,20 +5,20 @@
 Tiivistelmä artikkelista: Niemi 2025: H4 Tehtävät, luettavissa: https://github.com/AONCODES/linux-course/blob/main/h4.md
 
 * Palvelimen sijainnissa tulee ottaa huomioon lainsäädäntö ja viive, jotka määräytyvät palveluntarjoajan sijainnin ja valtion perusteella.
-* ssh-yhteyden jälkeen uuden käyttäjän luominen `adduser kayttaja` (Least privilidged periaate, ei käytetä pääkäyttäjää).
-* Luodun käyttäjän kotihakemiston omistajuuden muuttaminen  `chown -R kayttaja:kayttaja /home/kayttaja/.ssh/`. Myös huomiona että ssh estää sen käytön
+* ssh-yhteyden jälkeen uuden käyttäjän luominen `adduser "kayttaja"` (Least privilidged periaate, ei käytetä pääkäyttäjää).
+* Luodun käyttäjän kotihakemiston omistajuuden muuttaminen  `chown -R kayttaja:kayttaja /home/kayttaja/`. Myös huomiona että ssh estää sen käytön
   mikäli ssh-tiedostojen oikeudet ovat liian avoimet.
-* sudoers oikeudet uudelle käyttäjälle `add kayttaja sudo`, julkisen avaimen kopioniti käyttäjän kotihakemistoon rootin kotihakemistosta.
-* Palomuurin asennus: `sudo apt install ufw`, palomuuriin reikä ssh:lle `sudo ufw allow 22/tcp`, palomuuri päälle `sudo ufw enable`
+* sudoers oikeudet uudelle käyttäjälle `add "kayttaja" sudo`, julkisen avaimen kopioniti käyttäjän kotihakemistoon rootin kotihakemistosta.
+* Palomuurin asennus: `sudo apt install ufw`, palomuuriin reikä ssh:lle `sudo ufw allow ssh`, palomuuri päälle `sudo ufw enable`
 * Huom portti 22 on avattava ssh:lle ennen ufw:n päälle laittamista, jotta ei lukitse itseään ulos. [s.a. a](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu)
-* Palvelimen asennuksesen jälkeen pitää muistaa sallia portti 80 tai 443 (tai millä portilla ikinä pyörittääkään weppipalvelinta), jotta liikenne pääsee läpi sivulle asti.
+* Palvelimen asennuksesen jälkeen pitää muistaa sallia portti 80, jotta liikenne pääsee läpi sivulle asti.
 
 
 Tiivistelmä artikkelista Partanen 2025: Harjoitus 5: Nimekäs: a) Nimi, luettavissa: https://partanennn.github.io/linux-servers/practices/fifth-week.html
 
 * Namecheap tarjoaa halpoja domain-nimiä, muitakin kauppapaikkoja on.
 * Domainien kohdalla kannattaa katsoa kyseisen TLD:n (top level domain) koskevan säännöt ja palveluehdot,
-  sillä ne saattavat erota toisistaan domainista riippuen. (oma lisäykseni)
+  sillä ne saattavat erota toisistaan domainista riippuen, (oma lisäykseni).
 * Domaini saadaan osoittamaan haluamaamme ip-osoitteeseen namecheapin Domain list näkymästä, siten että määritellään
   A Record -kohtaan ip-osoite, johon haluamme viitata.
 
@@ -30,7 +30,7 @@ josta olen pitänyt. Tälle asialle nyt ei ole muuta syytä kuin se, että läpp
 ja virtual machine manager + KVM on toiminut hyvin.
 
 Asennus sujui varsin normaalisti, allokoin virtuaalikoneelle 6Gb muistia ja 4 prosessoria sekä 30Gb levytilaa. Vaihdoin firmwaren BIOS -> UEFI, jotta kone toimii ongelmitta. Asiaan sen syvällisemmin perehtymättä,
-minulla on joskus allut tämän asetuksen kanssa ongelmia virtuaalikoneiden kanssa. UEFI on uudempi firmware. Graafisessa asennuksessa näppäimistön kielen sekä maantieteellisen sijainnin vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa. 
+minulla on joskus allut tämän asetuksen kanssa ongelmia virtuaalikoneissa. UEFI on uudempi firmware. Graafisessa asennuksessa näppäimistön kielen sekä maantieteellisen sijainnin vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa. 
 
 Asennus onnistui ja lisäsin peruskäyttäjälleni sudo-oikeudet. Ensin vaihdoin käyttäjää `su root` ja sitten ajoin komennon `/usr/sbin/usermod -aG sudo "kayttaja"` usermod ei komentona toiminut, 
 joten ajoin koko polun. Aloin selvittämään että miksi usermod ei toiminut, ja selvisi että debian ei sisällytä /usr/sbin/ polussa olevia binäärejä normaalikäyttäjäien (ei root) `$PATH` [muuttujaan](https://en.wikipedia.org/wiki/PATH_(variable)). Vaikka olin pääkäyttäjänä ajamassa komentoja, pelkkä `su` vaihtaa vain käyttäjän, mutta säilyttää edellisen käyttäjän ympäristön. Kokeilin vastaavaa komennolla `su - root` (joka lataa käyttäjän oman ympäristön), ja usermod toimi normaalisti.
@@ -56,7 +56,7 @@ Tämän jälkeen ajoin komennot `cp -R .ssh /home/elmo/`, `chown -R elmo:elmo /h
 Päivitin koneen ja poistin turhat riippuvuudet komennolla `sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove --purge && sudo apt clean`. Tämän jälkeen asensin palomuurin komennolla 
 `sudo apt install ufw`, avasin ssh:n käytön (tcp/22) komennolla `sudo ufw allow ssh` ja ajoin palomuurin käyttöön komennolla `sudo ufw enable`. Tämän jälkeen boottasin koneen komennolla `sudo reboot`
 
-Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root` ja rootin avainperäisen kirjautumisen muuttamalla "PermitRootLogin" kentän arvosta "yes" arvoon "no". Tämä kenttä löytyy tiedostosta /etc/ssh/sshd_config ja muokkasin sitä komennolla `sudo nano /etc/ssh/sshd_config`. Tämän jälkeen kokeilin vielä, että roottina ei pääse sisään: `Permission denied (publickey).`
+Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root` ja rootin avainperäisen kirjautumisen muuttamalla "PermitRootLogin" kentän arvosta "yes" arvoon "no" tiedostosta /etc/ssh/sshd_config. Muokkasin tiedostoa komennolla `sudo nano /etc/ssh/sshd_config`. Tämän jälkeen kokeilin vielä, että roottina ei pääse enää sisään ssh:n kautta: `Permission denied (publickey).`
 
 ## d) Weppipalvelin
 
