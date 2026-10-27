@@ -30,11 +30,12 @@ josta olen pitänyt. Tälle asialle nyt ei ole muuta syytä kuin se, että läpp
 ja virtual machine manager + KVM on toiminut hyvin.
 
 Asennus sujui varsin normaalisti, allokoin virtuaalikoneelle 6Gb muistia ja 4 prosessoria sekä 30Gb levytilaa. Vaihdoin firmwaren BIOS -> UEFI, jotta kone toimii ongelmitta. Asiaan sen syvällisemmin perehtymättä,
-minulla on joskus allut tämän asetuksen kanssa ongelmia virtuaalikoneiden kanssa. UEFI on uudempi pohja firmwarelle ja paremmin tuettu.
-Graafisessa asennuksessa perus jutut kuten näppäimistön kielen tottakai vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa. 
+minulla on joskus allut tämän asetuksen kanssa ongelmia virtuaalikoneiden kanssa. UEFI on uudempi firmware. Graafisessa asennuksessa näppäimistön kielen sekä maantieteellisen sijainnin vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa. 
 
-Asennus onnistui ja lisäsin peruskäyttäjälleni sudo-oikeudet. Ensin vaihdoin käyttäjää `su root` ja sitten ajoin komennon `/usr/sbin/usermod -aG sudo "kayttaja"` Jostakin syystä usermod ei komentona toiminut, 
-joten ajoin koko polun. Vielä lopuksi ajoin komennon `sudo apt update && sudo apt full-upgrade -y` ajaekseni uusimmat päivitykset sisään.
+Asennus onnistui ja lisäsin peruskäyttäjälleni sudo-oikeudet. Ensin vaihdoin käyttäjää `su root` ja sitten ajoin komennon `/usr/sbin/usermod -aG sudo "kayttaja"` usermod ei komentona toiminut, 
+joten ajoin koko polun. Aloin selvittämään että miksi usermod ei toiminut, ja selvisi että debian ei sisällytä /usr/sbin/ polussa olevia binäärejä normaalikäyttäjäien (ei root) `$PATH` [muuttujaan](https://en.wikipedia.org/wiki/PATH_(variable)). Vaikka olin pääkäyttäjänä ajamassa komentoja, pelkkä `su` vaihtaa vain käyttäjän, mutta säilyttää edellisen käyttäjän ympäristön. Kokeilin vastaavaa komennolla `su - root` (joka lataa käyttäjän oman ympäristön), ja ongelma katosi.
+
+Vielä lopuksi ajoin komennon `sudo apt update && sudo apt full-upgrade -y` järjestelmän päivittämiseksi.
 
 
 ## b) VPS
@@ -47,9 +48,11 @@ firma, ja itse palvelimen sai myös fyysisesti Suomesta. Myöskin hinta oli aika
 
 
 ## Lähteet
-Karvinen, T.2026 Palvelinten Hallinta. Luettavissa: https://terokarvinen.com/palvelinten-hallinta/ Luettu 26.10.2026
+Karvinen, T.2026 Oppitunti 22.10: Palvelinten Hallinta
+Karvinen, T.2026 Palvelinten Hallinta, Luettavissa: https://terokarvinen.com/palvelinten-hallinta/ Luettu 26.10.2026
 
 Digital Ocean. 19.9.2025. How to Set Up a Firewall with UFW on Ubuntu. 
 Luettavissa: 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu 
 Luettu 26.10.2026
+Wikipedia PATH(variable).s.a. a Luettavissa: https://en.wikipedia.org/wiki/PATH_(variable) Luettu 27.10.2026
