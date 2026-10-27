@@ -51,16 +51,20 @@ Kuva 2. palvelimen tiedot
 ## c) Alkutoimet
 
 Otin ssh-yhteyden palvelimeeni pääkäyttäjänä komennolla `ssh root@ip` ja tein itselleni uuden normaalikäyttäjän "elmo", ja lisäsin samalla sudo-oikeuden käyttäjälle komennoilla `adduser elmo && adduser elmo sudo`.
-Tämän jälkeen ajoin komennot `cp -R .ssh /home/elmo/`, `chown -R elmo:elmo /home/elmo`. Ensimmäinen komento kopioi .ssh-kansion elmo-käyttäjän kotihakemistoon rootin kotihakemistosta, jälkimmäinen komento vaihtaa /home/elmo kansion ja sen sisältöjen omistuksen käyttäjälle elmo ja ryhmään elmo. Tämän jälkeen kokeilin poistua serveriltä ja ottaa ssh-yhteyden suoraan elmo-käyttäjälle, joka onnistui hyvin.
+Tämän jälkeen ajoin komennot `cp -R .ssh /home/elmo/`, `chown -R elmo:elmo /home/elmo`. Ensimmäinen komento kopioi .ssh-kansion käyttäjän kotihakemistoon rootin kotihakemistosta, jälkimmäinen komento vaihtaa /home/elmo kansion ja sen sisältöjen omistuksen käyttäjälle elmo ja ryhmään elmo. Tämän jälkeen kokeilin poistua serveriltä ja ottaa ssh-yhteyden suoraan elmo-käyttäjälle, joka onnistui hyvin.
 
 Päivitin koneen ja poistin turhat riippuvuudet komennolla `sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove --purge && sudo apt clean`. Tämän jälkeen asensin palomuurin komennolla 
 `sudo apt install ufw`, avasin ssh:n käytön (tcp/22) komennolla `sudo ufw allow ssh` ja ajoin palomuurin käyttöön komennolla `sudo ufw enable`. Tämän jälkeen boottasin koneen komennolla `sudo reboot`
 
-Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root` ja rootin avainperäisen kirjautumisen muuttamalla "PermitRootLogin" kentän arvosta "yes" arvoon "no". Tämä kenttä löytyy tiedostosta /etc/ssh/sshd_config ja muokkasin sitä komennolla `sudo nano /etc/ssh/sshd_config`.
+Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root` ja rootin avainperäisen kirjautumisen muuttamalla "PermitRootLogin" kentän arvosta "yes" arvoon "no". Tämä kenttä löytyy tiedostosta /etc/ssh/sshd_config ja muokkasin sitä komennolla `sudo nano /etc/ssh/sshd_config`. Tämän jälkeen kokeilin vielä, että roottina ei pääse sisään: `Permission denied (publickey).`
 
 ## d) Weppipalvelin
 
-Asensin Apache-palvelimen komennolla `sudo apt install apache2`.
+Asensin Apache-palvelimen komennolla `sudo apt install apache2`. Avasin weppiliikenteen portin (tcp/80) komennolla `sudo ufw allow http`. Tämän jälkeen kokeilin palvelimen ip-osoitteella selaimesta, että onko sivu ylhäällä, ja olihan se. 
+<img width="869" height="918" alt="kuva" src="https://github.com/user-attachments/assets/85a5382f-6a3a-4025-8a50-98ff95df62c9" />
+Kuva 3. Weppisivun testaus selaimella
+
+
 
 
 
