@@ -38,7 +38,6 @@ joten ajoin koko polun. Aloin selvittämään että miksi usermod ei toiminut, j
 Vielä lopuksi ajoin komennon `sudo apt update && sudo apt full-upgrade -y` järjestelmän päivittämiseksi.
 
 <img width="2744" height="1278" alt="image" src="https://github.com/user-attachments/assets/c3d01524-511b-4798-b9ea-36da282fbf29" />
-
 Kuva 1. Virtual machine manager & debian 13 asennettuna
 
 
@@ -47,6 +46,7 @@ Kurssin ensimmäisellä oppitunnilla 22.10.2026 oli tunnin lopussa aikaa vuokrat
 firma, ja itse palvelimen sai myös fyysisesti Suomesta. Myöskin hinta oli aikalailla samalla tasolla kuin muilla palveluntarjoajilla. Kuten kuvasta näkyy, palvelimen resurssien osalta menin halvimmalla mahdollisella vaihtoehdolla. Ehdin tunnilla myös generoimaan ssh-avainparin, liittämään julkisen avaimen palvelimeen ja ottamaan palvelimelle ssh-yhteyden pääkäyttäjänä.
 
 <img width="1618" height="540" alt="image" src="https://github.com/user-attachments/assets/3eb88e33-2f98-4b7b-9906-e4ff149f772a" />
+Kuva 2. palvelimen tiedot
 
 ## c) Alkutoimet
 
@@ -56,7 +56,7 @@ Tämän jälkeen ajoin komennot `cp -R .ssh /home/elmo/`, `chown -R elmo:elmo /h
 Päivitin koneen ja poistin turhat riippuvuudet komennolla `sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove --purge && sudo apt clean`. Tämän jälkeen asensin palomuurin komennolla 
 `sudo apt install ufw`, avasin ssh:n käytön (tcp/22) komennolla `sudo ufw allow ssh` ja ajoin palomuurin käyttöön komennolla `sudo ufw enable`. Tämän jälkeen boottasin koneen komennolla `sudo reboot`
 
-Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root` ja 
+Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root` ja rootin avainperäisen kirjautumisen muuttamalla "PermitRootLogin" kentän arvosta "yes" arvoon "no". Tämä kenttä löytyy tiedostosta /etc/ssh/sshd_config ja muokkasin sitä komennolla `sudo nano /etc/ssh/sshd_config`.
 
 ## d) Weppipalvelin
 
