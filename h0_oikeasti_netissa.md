@@ -33,18 +33,31 @@ Asennus sujui varsin normaalisti, allokoin virtuaalikoneelle 6Gb muistia ja 4 pr
 minulla on joskus allut tämän asetuksen kanssa ongelmia virtuaalikoneiden kanssa. UEFI on uudempi firmware. Graafisessa asennuksessa näppäimistön kielen sekä maantieteellisen sijainnin vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa. 
 
 Asennus onnistui ja lisäsin peruskäyttäjälleni sudo-oikeudet. Ensin vaihdoin käyttäjää `su root` ja sitten ajoin komennon `/usr/sbin/usermod -aG sudo "kayttaja"` usermod ei komentona toiminut, 
-joten ajoin koko polun. Aloin selvittämään että miksi usermod ei toiminut, ja selvisi että debian ei sisällytä /usr/sbin/ polussa olevia binäärejä normaalikäyttäjäien (ei root) `$PATH` [muuttujaan](https://en.wikipedia.org/wiki/PATH_(variable)). Vaikka olin pääkäyttäjänä ajamassa komentoja, pelkkä `su` vaihtaa vain käyttäjän, mutta säilyttää edellisen käyttäjän ympäristön. Kokeilin vastaavaa komennolla `su - root` (joka lataa käyttäjän oman ympäristön), ja ongelma katosi.
+joten ajoin koko polun. Aloin selvittämään että miksi usermod ei toiminut, ja selvisi että debian ei sisällytä /usr/sbin/ polussa olevia binäärejä normaalikäyttäjäien (ei root) `$PATH` [muuttujaan](https://en.wikipedia.org/wiki/PATH_(variable)). Vaikka olin pääkäyttäjänä ajamassa komentoja, pelkkä `su` vaihtaa vain käyttäjän, mutta säilyttää edellisen käyttäjän ympäristön. Kokeilin vastaavaa komennolla `su - root` (joka lataa käyttäjän oman ympäristön), ja usermod toimi normaalisti.
 
 Vielä lopuksi ajoin komennon `sudo apt update && sudo apt full-upgrade -y` järjestelmän päivittämiseksi.
 
 
 ## b) VPS
 Kurssin ensimmäisellä oppitunnilla 22.10.2026 oli tunnin lopussa aikaa vuokrata vps. Päädyin itse UpCloudiin, sillä kysessä on suomalainen
-firma, ja itse palvelimen sai myös fyysisesti Suomesta. Myöskin hinta oli aikalailla samalla tasolla kuin muilla palveluntarjoajilla. Kuten kuvasta näkyy, palvelimen resurssien osalta menin halvimmalla mahdollisella vaihtoehdolla. Ehdin tunnilla myös generoimaan ssh-avainparin ja ottamaan palvelimelle ssh-yhteyden pääkäyttäjänä.
+firma, ja itse palvelimen sai myös fyysisesti Suomesta. Myöskin hinta oli aikalailla samalla tasolla kuin muilla palveluntarjoajilla. Kuten kuvasta näkyy, palvelimen resurssien osalta menin halvimmalla mahdollisella vaihtoehdolla. Ehdin tunnilla myös generoimaan ssh-avainparin, liittämään julkisen avaimen palvelimeen ja ottamaan palvelimelle ssh-yhteyden pääkäyttäjänä.
 
 <img width="1618" height="540" alt="image" src="https://github.com/user-attachments/assets/3eb88e33-2f98-4b7b-9906-e4ff149f772a" />
 
 ## c) Alkutoimet
+
+Otin ssh-yhteyden palvelimeeni pääkäyttäjänä komennolla `ssh root@ip` ja tein itselleni uuden normaalikäyttäjän, ja lisäsin samalla sudo-oikeuden käyttäjälle komennoilla `adduser elmo && adduser elmo sudo`.
+Tämän jälkeen ajoin komennot `cp -R .ssh /home/elmo/`, `chown -R elmo:elmo /home/elmo`. Ensimmäinen komento kopioi .ssh-kansion elmo-käyttäjän kotihakemistoon, jälkimmäinen komento vaihtaa /home/elmo kansion ja sen sisältöjen omistuksen käyttäjälle elmo ja ryhmään elmo. Tämän jälkeen kokeilin poistua serveriltä ja ottaa ssh-yhteyden suoraan elmo-käyttäjälle, joka onnistui hyvin.
+
+Päivitin koneen ja poistin turhat riippuvuudet komennolla `sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove --purge && sudo apt clean`. Tämän jälkeen asensin palomuurin komennolla 
+`sudo apt install ufw`, avasin ssh:n käytön (tcp/22) komennolla `sudo ufw allow ssh` ja ajoin palomuurin käyttöön komennolla `sudo ufw enable`. Tämän jälkeen boottasin koneen komennolla `sudo reboot`
+
+Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root`
+
+## d) Weppipalvelin
+
+Asensin Apache-palvelimen komennolla `sudo apt install apache2`
+
 
 
 ## Lähteet
