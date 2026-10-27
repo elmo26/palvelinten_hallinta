@@ -36,7 +36,7 @@ sudo apt autoremove --purge && sudo apt clean` ajaekseni uusimmat päivitykset s
 
 ## b) VPS
 Kurssin ensimmäisellä oppitunnilla 22.10.2026 oli tunnin lopussa aikaa vuokrata vps. Päädyin itse UpCloudiin, sillä kysessä on suomalainen
-firma, ja itse palvelimen sai myös fyysisesti Suomesta. Myöskin hinta oli aikalailla samalla tasolla kuin muilla palveluntarjoajilla. Kuten kuvasta näkyy, palvelimen resurssien osalta menin halvimmalla mahdollisella vaihtoehdolla. Ehdin tunnilla myös generoimaan ssh-avainparin ja käymään palvelimella pääkäyttäjänä.
+firma, ja itse palvelimen sai myös fyysisesti Suomesta. Myöskin hinta oli aikalailla samalla tasolla kuin muilla palveluntarjoajilla. Kuten kuvasta näkyy, palvelimen resurssien osalta menin halvimmalla mahdollisella vaihtoehdolla. Ehdin tunnilla myös generoimaan ssh-avainparin ja ottamaan palvelimelle ssh-yhteyden pääkäyttäjänä.
 
 <img width="1618" height="540" alt="image" src="https://github.com/user-attachments/assets/3eb88e33-2f98-4b7b-9906-e4ff149f772a" />
 
