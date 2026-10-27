@@ -39,6 +39,7 @@ Vielä lopuksi ajoin komennon `sudo apt update && sudo apt full-upgrade -y` jär
 
 <img width="2744" height="1278" alt="image" src="https://github.com/user-attachments/assets/c3d01524-511b-4798-b9ea-36da282fbf29" />
 
+Kuva 1. Virtual machine manager & debian 13 asennettuna
 
 
 ## b) VPS
