@@ -52,11 +52,11 @@ Tämän jälkeen ajoin komennot `cp -R .ssh /home/elmo/`, `chown -R elmo:elmo /h
 Päivitin koneen ja poistin turhat riippuvuudet komennolla `sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove --purge && sudo apt clean`. Tämän jälkeen asensin palomuurin komennolla 
 `sudo apt install ufw`, avasin ssh:n käytön (tcp/22) komennolla `sudo ufw allow ssh` ja ajoin palomuurin käyttöön komennolla `sudo ufw enable`. Tämän jälkeen boottasin koneen komennolla `sudo reboot`
 
-Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root`
+Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --lock root`.
 
 ## d) Weppipalvelin
 
-Asensin Apache-palvelimen komennolla `sudo apt install apache2`
+Asensin Apache-palvelimen komennolla `sudo apt install apache2`.
 
 
 
