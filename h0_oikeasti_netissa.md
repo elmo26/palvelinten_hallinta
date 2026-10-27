@@ -29,9 +29,12 @@ Virtualisointiympäristö missä tämä kone tulee pyörimään, on linux-pohjai
 josta olen pitänyt. Tälle asialle nyt ei ole muuta syytä kuin se, että läppärin host-käyttiksenä on linux mint, 
 ja virtual machine manager + KVM on toiminut hyvin.
 
-Asennus sujui varsin normaalisti, allokoin virtuaalikoneelle 6Gb muistia ja 4 prosessoria sekä 30Gb levytilaa. Graafisessa asennuksessa perus jutut kuten näppäimistön kieli
-tms tottakai vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa. Asennus onnistui ja ajoin vielä lopuksi komennon `sudo apt update && sudo apt full-upgrade -y && 
-sudo apt autoremove --purge && sudo apt clean` ajaekseni uusimmat päivitykset sisään ja poistaakseni turhat vanhentuneet paketit.
+Asennus sujui varsin normaalisti, allokoin virtuaalikoneelle 6Gb muistia ja 4 prosessoria sekä 30Gb levytilaa. Vaihdoin firmwaren BIOS -> UEFI, jotta kone toimii ongelmitta. Asiaan sen syvällisemmin perehtymättä,
+minulla on joskus allut tämän asetuksen kanssa ongelmia virtuaalikoneiden kanssa. UEFI on uudempi pohja firmwarelle ja paremmin tuettu.
+Graafisessa asennuksessa perus jutut kuten näppäimistön kielen tottakai vaihdoin. Tämän jälkeen asetin pääkäyttäjän ja normaalikäyttäjän käyttäjänimet sekä salasanat ja muutoin käytin oletusasetuksia asennuksessa. 
+
+Asennus onnistui ja lisäsin peruskäyttäjälleni sudo-oikeudet. Ensin vaihdoin käyttäjää `su root` ja sitten ajoin komennon `/usr/sbin/usermod -aG sudo "kayttaja"` Jostakin syystä usermod ei komentona toiminut, 
+joten ajoin koko polun. Vielä lopuksi ajoin komennon `sudo apt update && sudo apt full-upgrade -y` ajaekseni uusimmat päivitykset sisään.
 
 
 ## b) VPS
@@ -40,6 +43,7 @@ firma, ja itse palvelimen sai myös fyysisesti Suomesta. Myöskin hinta oli aika
 
 <img width="1618" height="540" alt="image" src="https://github.com/user-attachments/assets/3eb88e33-2f98-4b7b-9906-e4ff149f772a" />
 
+## c) Alkutoimet
 
 
 ## Lähteet
