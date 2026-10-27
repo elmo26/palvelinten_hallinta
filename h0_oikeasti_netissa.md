@@ -37,6 +37,9 @@ joten ajoin koko polun. Aloin selvittämään että miksi usermod ei toiminut, j
 
 Vielä lopuksi ajoin komennon `sudo apt update && sudo apt full-upgrade -y` järjestelmän päivittämiseksi.
 
+<img width="2744" height="1278" alt="image" src="https://github.com/user-attachments/assets/c3d01524-511b-4798-b9ea-36da282fbf29" />
+
+
 
 ## b) VPS
 Kurssin ensimmäisellä oppitunnilla 22.10.2026 oli tunnin lopussa aikaa vuokrata vps. Päädyin itse UpCloudiin, sillä kysessä on suomalainen
