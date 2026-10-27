@@ -71,10 +71,12 @@ Kuva 3. Weppisivun testaus selaimella
 
 ## Lähteet
 Karvinen, T.2026 Oppitunti 22.10: Palvelinten Hallinta
+
 Karvinen, T.2026 Palvelinten Hallinta, Luettavissa: https://terokarvinen.com/palvelinten-hallinta/ Luettu 26.10.2026
 
 Digital Ocean. 19.9.2025. How to Set Up a Firewall with UFW on Ubuntu. 
 Luettavissa: 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu 
 Luettu 26.10.2026
+
 Wikipedia PATH(variable).s.a. a Luettavissa: https://en.wikipedia.org/wiki/PATH_(variable) Luettu 27.10.2026
