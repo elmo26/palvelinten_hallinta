@@ -62,6 +62,7 @@ Lopuksi lukitsin root-tilin (salasana) kirjautumisen komennolla `sudo usermod --
 
 Asensin Apache-palvelimen komennolla `sudo apt install apache2`. Avasin weppiliikenteen portin (tcp/80) komennolla `sudo ufw allow http`. Tämän jälkeen kokeilin palvelimen ip-osoitteella selaimesta, että onko sivu ylhäällä, ja olihan se. 
 <img width="869" height="918" alt="kuva" src="https://github.com/user-attachments/assets/85a5382f-6a3a-4025-8a50-98ff95df62c9" />
+
 Kuva 3. Weppisivun testaus selaimella
 
 
