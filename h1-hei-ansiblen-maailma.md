@@ -36,6 +36,10 @@ Kuva 2. Sshd ylösajo ja ssh-yhteys localhostille.
 ## c)
 Kuten edellisessä kohdassa näkyy, pääsin sisään ilman salasanakirjautumista. Poistin `authorized_keys` tiedoston käyttäjäni kotihakemistosta, jotta julkisen avaimen kirjautuminen ei olisi käytössä ja testasin sen toimimattomaksi.
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9c4e7151-9167-4e89-860b-4f88afd1d4ab" />
+
+Kuva 3. Authorized_keys tiedoston poisto ja varmistus, että avaimella ei pääse sisään.
+
 
 ## d)
 
