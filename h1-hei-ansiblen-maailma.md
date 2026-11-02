@@ -49,6 +49,7 @@ Tämän jälkeen ajoin komennon `ssh-copy-id localhost`, joka lisää authorized
 Kuva 4. Julkisen avaimen lisääminen kohteeseen, kirjautuminen avaimella.
 
 ## d) Hei Ansible
+Aloitin tehtävän asentamalla tiivistelmässä mainitut ohjelmat komennolla `sudo apt update && sudo apt install ansible micro tree`. Ansible oli ainoa pakollinen, mutta mikco näytti sen verran hyvältä editorilta, ja tree tässä kohdassa kätevältä avulta tiedostorakenteiden havainnollistamiseen, että asensin molemmat.
 
 ## e) Vapaaehtoinen bonus
 
