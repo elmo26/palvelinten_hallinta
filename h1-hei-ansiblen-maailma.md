@@ -53,6 +53,11 @@ Aloitin tehtävän asentamalla tiivistelmässä mainitut ohjelmat komennolla `su
 
 Asennusten jälkeen tein suoraan koko tarvitsemani hakemistorakenteen kerralla, koska koin sen havainnollistavan asioita. Itse ansible hakemiston tein käyttäjäni kotihakemistoon.
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/7568ad94-af1e-4c05-8079-7e3e8fed68c0" />
+
+Kuva 5. Tein tehtävään tarvittavan tiedostorakenteen valmiiksi, mielestäni se helpottaa muistamaan mitä on/ pitäisi olla missäkin.
+
+
 
 
 ## e) Vapaaehtoinen bonus
