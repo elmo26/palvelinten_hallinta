@@ -33,7 +33,7 @@ Tämän jälkeen piti testata ssh:n toimivuus joten ajoin palvelun ylös komenno
 
 Kuva 2. Sshd ylösajo ja ssh-yhteys localhostille.
 
-## c)
+## c) Pubkey
 Kuten edellisessä kohdassa näkyy, pääsin sisään ilman salasanakirjautumista. Olin edellisellä tunnilla pistänyt julkisen avaimen kirjautumisen pystyyn. Seuraavaksi poistin tämän menetelmän, jotta saisin sen laitettua uudelleen pystyyn.
 
 Poistin `authorized_keys` tiedoston käyttäjäni kotihakemistosta komennolla `rm authorized_keys`, jotta julkisen avaimen kirjautuminen ei olisi käytössä ja testasin sen toimimattomaksi. Kuten kuvassa näkyy, `ssh localhost` vaatii minulta salasanaa `authorized_keys` tiedoston poiston jälkeen.
@@ -48,9 +48,9 @@ Tämän jälkeen ajoin komennon `ssh-copy-id localhost`, joka lisää authorized
 
 Kuva 4. Julkisen avaimen lisääminen kohteeseen, kirjautuminen avaimella.
 
-## d)
+## d) Hei Ansible
 
-## e)
+## e) Vapaaehtoinen bonus
 
 ## Lähteet
 
