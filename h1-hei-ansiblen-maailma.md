@@ -58,6 +58,9 @@ Asennusten jälkeen tein suoraan koko tarvitsemani hakemistorakenteen kerralla, 
 Kuva 5. Tein tehtävään tarvittavan tiedostorakenteen valmiiksi, mielestäni se helpottaa muistamaan mitä on/ pitäisi olla missäkin.
 
 
+`Hosts.ini` Tiedostoon määrittelin ainoan kohteen eli `localhost`. Lisäsin myös python kääntäjän polun jotta ansible ei valita asiasta (katso x). `ansible.cfg` tiedostoon lisäsin oletusasetuksen, että hosts.ini ajetaan, joten sitä ei tarvitse erikseen joka komennossa kirjoittaa. Roolin `hei_maailma` alle, tiedostoon `main.yml` lisäsin kohteen `dest: /tmp/hello-ansible` ja sisällön `content: "Hei maailma :)" `. Lisäksi site.yml tiedostossa määrittelin hostit eli slave-koneet kenelle ajetaan komentoja `hosts: all` ja roolit `roles: hello`.
+
+
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/19a29760-8177-4dbc-9b4d-7676b264ef0e" />
 
 Kuva 6. Kaikki tiedostot sisältöineen
