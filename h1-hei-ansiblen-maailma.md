@@ -34,12 +34,19 @@ Tämän jälkeen piti testata ssh:n toimivuus joten ajoin palvelun ylös komenno
 Kuva 2. Sshd ylösajo ja ssh-yhteys localhostille.
 
 ## c)
-Kuten edellisessä kohdassa näkyy, pääsin sisään ilman salasanakirjautumista. Poistin `authorized_keys` tiedoston käyttäjäni kotihakemistosta komennolla `rm authorized_keys`, jotta julkisen avaimen kirjautuminen ei olisi käytössä ja testasin sen toimimattomaksi. Kuten kuvassa näkyy, `ssh localhost` vaatii minulta salasanaa `authorized_keys` tiedoston poiston jälkeen.
+Kuten edellisessä kohdassa näkyy, pääsin sisään ilman salasanakirjautumista. Olin edellisellä tunnilla pistänyt julkisen avaimen kirjautumisen pystyyn. Seuraavaksi poistin tämän menetelmän, jotta saisin sen laitettua uudelleen pystyyn.
+
+Poistin `authorized_keys` tiedoston käyttäjäni kotihakemistosta komennolla `rm authorized_keys`, jotta julkisen avaimen kirjautuminen ei olisi käytössä ja testasin sen toimimattomaksi. Kuten kuvassa näkyy, `ssh localhost` vaatii minulta salasanaa `authorized_keys` tiedoston poiston jälkeen.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9c4e7151-9167-4e89-860b-4f88afd1d4ab" />
 
 Kuva 3. Authorized_keys tiedoston poisto ja varmistus, että avaimella ei pääse sisään.
 
+Tämän jälkeen ajoin komennon `ssh-copy-id localhost`, joka lisää authorized_keys tiedoston ja julkisen avaimen sinne osoitettuun kohteeseen eli localhostiin. Tämän jälkeen ssh-yhteys onnistui taas ilman salasanaa komennolla `ssh localhost`.
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/6eb206da-04e1-40aa-8150-370208f0fb70" />
+
+Kuva 4. Julkisen avaimen lisääminen kohteeseen, kirjautuminen avaimella.
 
 ## d)
 
