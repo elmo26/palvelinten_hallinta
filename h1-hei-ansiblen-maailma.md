@@ -65,6 +65,8 @@ Kuva 5. Tein tehtävään tarvittavan tiedostorakenteen valmiiksi, mielestäni s
 
 Kuva 6. Kaikki tiedostot sisältöineen
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/ba3adca9-4efd-401a-a715-ac5a2cf4ee0d" />
+
 
 ## e) Vapaaehtoinen bonus
 
