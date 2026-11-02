@@ -42,7 +42,7 @@ Poistin `authorized_keys` tiedoston käyttäjäni kotihakemistosta komennolla `r
 
 Kuva 3. Authorized_keys tiedoston poisto ja varmistus, että avaimella ei pääse sisään.
 
-Tämän jälkeen ajoin komennon `ssh-copy-id localhost`, joka lisää authorized_keys tiedoston ja julkisen avaimen sinne osoitettuun kohteeseen eli localhostiin. Tämän jälkeen ssh-yhteys onnistui taas ilman salasanaa komennolla `ssh localhost`.
+Tämän jälkeen ajoin komennon `ssh-copy-id localhost`, joka lisää authorized_keys tiedostoon julkisen avaimen. Osoitettu kohde tässä taas localhost. Tämän jälkeen ssh-yhteys onnistui taas ilman salasanaa komennolla `ssh localhost`.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/6eb206da-04e1-40aa-8150-370208f0fb70" />
 
