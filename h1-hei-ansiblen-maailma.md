@@ -65,8 +65,11 @@ Kuva 5. Tein tehtävään tarvittavan tiedostorakenteen valmiiksi, mielestäni s
 
 Kuva 6. Kaikki tiedostot sisältöineen
 
-<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/ba3adca9-4efd-401a-a715-ac5a2cf4ee0d" />
 
+Tämän jälkeen yritin ajaa komennon `ansible-playbook site.yml`, mutta rooli oli virheellisesti nimetty `hello`, eikä `hei_maailma`. Korjasin asian ja sain komennon läpi, ansible ajoi ssh:n yli komennon ja lopputuloksena ilmoitti muuttaneensa yhtä asiaa. Ajoin vielä komennon  `cat tmp/hello-ansible` varmistaakseni että muutos varmasti toteutui.
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/ba3adca9-4efd-401a-a715-ac5a2cf4ee0d" />
+Ansible-playbook ongelma, ajo ja varmistus.
 
 ## e) Vapaaehtoinen bonus
 
