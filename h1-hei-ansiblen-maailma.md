@@ -58,6 +58,9 @@ Asennusten jälkeen tein suoraan koko tarvitsemani hakemistorakenteen kerralla, 
 Kuva 5. Tein tehtävään tarvittavan tiedostorakenteen valmiiksi, mielestäni se helpottaa muistamaan mitä on/ pitäisi olla missäkin.
 
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/19a29760-8177-4dbc-9b4d-7676b264ef0e" />
+
+Kuva 6. Kaikki tiedostot sisältöineen
 
 
 ## e) Vapaaehtoinen bonus
