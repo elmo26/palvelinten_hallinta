@@ -9,7 +9,7 @@
 * Kokeile SSH toimivuus ottamalla yhteyden localhostille `ssh localhost`
 * SSH avainten generointi `ssh-keygen`, kopioi julkinen avain hostille `ssh-copy-id host`
 
-### Tiivistelmä Hello Ansible[(Karvinen 2026)] (https://terokarvinen.com/hello-ansible/)
+### Tiivistelmä Hello Ansible [(Karvinen 2026)](https://terokarvinen.com/hello-ansible/)
 * Asenna Ansible (ja pari ylimääräistä työkalua) `sudo apt-get update && sudo apt-get install ansible micro bash-completion tree` 
 * Tehdään kansio `ansible` konfiguraatiota varten ja sinne tiedosto `hosts.ini`, jonne lisätään kontrolloitavat hostit. localhost on hyvä testatessa.
 * Jos ansible valittaa ajettaessa pythonista, lisätään hosts.ini tiedostoon python kääntäjän polku `/usr/bin/python3` kaikille koneille, ja ansible ei enää valita.
