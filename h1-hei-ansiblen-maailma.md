@@ -34,6 +34,8 @@ Tämän jälkeen piti testata ssh:n toimivuus joten ajoin palvelun ylös komenno
 Kuva 2. Sshd ylösajo ja ssh-yhteys localhostille.
 
 ## c)
+Kuten edellisessä kohdassa näkyy, pääsin sisään ilman salasanakirjautumista. Poistin `authorized_keys` tiedoston käyttäjäni kotihakemistosta, jotta julkisen avaimen kirjautuminen ei olisi käytössä ja testasin sen toimimattomaksi.
+
 
 ## d)
 
