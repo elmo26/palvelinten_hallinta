@@ -21,8 +21,17 @@
 ## a) Paikallista Tehty tehtävässä h0 oikeasti netissä, kohdassa a) Linkki: https://github.com/elmo26/palvelinten_hallinta/blob/main/h0_oikeasti_netissa.md
 
 ## b) Sshecrets
-Olin tehnyt tämän tunnilla joten pysäytin ensin ssh demonin komennolla `sudo systemctl stop ssh` ja varmistin, että se on pois päältä katsomalla statuksen komennolla `systemctl status ssh`.
+Olin tehnyt tämän tunnilla, mutta koska tehtävässä käskettiin asentamaan ssh demoni käsin, poistin sen ensin koneeltani. Pysäytin ssh demonin komennolla `sudo systemctl stop ssh` ja varmistin, että se on pois päältä katsomalla statuksen komennolla `systemctl status ssh`.
 Poistin ssh-demonin komennolla `sudo apt remove openssh-server`. Tämän jälkeen asensin sen takaisin komennolla `sudo apt install openssh-server`.
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/ccbfc3ed-45b8-4ef2-98c9-d7284d27d89b" />
+Kuva 1. Ssh-demonin (serverin) asennus
+
+Tämän jälkeen piti testata ssh:n toimivuus joten ajoin palvelun ylös komennolla `sudo systemctl start ssh` ja sen jälkeen otin ssh-yhteyden localhostille. 
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/e7b9be82-6d61-40d6-af51-1c5be6e7832f" />
+
+Kuva 2. Sshd ylösajo ja ssh-yhteys localhostille.
 
 ## c)
 
