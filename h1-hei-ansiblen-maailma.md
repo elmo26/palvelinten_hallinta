@@ -18,9 +18,11 @@
 * Rooleille oma kansio `roles`, jonka sisällä rooleille omat kansionsa. Esim `roles/apache2`
 * tree-ohjelma on kätevä piirtämään tiedostorakenteen loogisesti terminaaliin. Sillä on hyvä aloittaa ongelmien etsiminen, kun joku ei toimi tai tiedosto x on unohtunut.
 
-## a) Tehty tehtävässä h0 oikeasti netissä, kohdassa a) Linkki: https://github.com/elmo26/palvelinten_hallinta/blob/main/h0_oikeasti_netissa.md
+## a) Paikallista Tehty tehtävässä h0 oikeasti netissä, kohdassa a) Linkki: https://github.com/elmo26/palvelinten_hallinta/blob/main/h0_oikeasti_netissa.md
 
-## b)
+## b) Sshecrets
+Olin tehnyt tämän tunnilla joten pysäytin ensin ssh demonin komennolla `sudo systemctl stop ssh` ja varmistin, että se on pois päältä katsomalla statuksen komennolla `systemctl status ssh`.
+Poistin ssh-demonin komennolla `sudo apt remove openssh-server`. Tämän jälkeen asensin sen takaisin komennolla `sudo apt install openssh-server`.
 
 ## c)
 
