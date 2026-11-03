@@ -18,7 +18,7 @@
 * Rooleille oma kansio `roles`, jonka sisällä rooleille omat kansionsa. Esim `roles/apache2`
 * tree-ohjelma on kätevä piirtämään tiedostorakenteen loogisesti terminaaliin. Sillä on hyvä aloittaa ongelmien etsiminen, kun joku ei toimi tai tiedosto x on unohtunut.
 
-## a) Paikallista Tehty tehtävässä h0 oikeasti netissä, kohdassa a) 
+## a) Paikallista: Tehty tehtävässä "h0 oikeasti netissä", kohdassa a) 
 Linkki: https://github.com/elmo26/palvelinten_hallinta/blob/main/h0_oikeasti_netissa.md
 
 ## b) Sshecrets
