@@ -90,7 +90,7 @@ inventory = hosts.ini`
    roles: 
     - hei_maailma`
 
-### ~/ansible/roles/hello/tasks/main.yml
+### ~/ansible/roles/hei_maailma/tasks/main.yml
 `- copy:
     dest: /tmp/hello_ansible
     content: "Hei maailma :)"`
