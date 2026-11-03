@@ -77,23 +77,31 @@ Kuva 7. Ansible-playbook ongelma, ajo ja varmistus.
 
 
 ### hosts.ini
-`localhost
+```
+localhost
 [all:vars]
-ansible_python_interpreter=/usr/bin/python3`
+ansible_python_interpreter=/usr/bin/python3
+```
 
 ### ansible.cfg
-`[defaults]
-inventory = hosts.ini`
+
+```
+[defaults]
+inventory = hosts.ini
+```
 
 ### site.yml
-`- hosts: all 
+```
+- hosts: all 
    roles: 
-    - hei_maailma`
+    - hei_maailma
+```
 
 ### ~/ansible/roles/hei_maailma/tasks/main.yml
-`- copy:
+```- copy:
     dest: /tmp/hello_ansible
-    content: "Hei maailma :)"`
+    content: "Hei maailma :)"
+```
 
 
 ## e) Vapaaehtoinen bonus
