@@ -12,13 +12,14 @@
 ### Tiivistelmä Hello Ansible [(Karvinen 2026)](https://terokarvinen.com/hello-ansible/)
 * Asenna Ansible (ja pari ylimääräistä työkalua) `sudo apt-get update && sudo apt-get install ansible micro bash-completion tree` 
 * Tehdään kansio `ansible` konfiguraatiota varten ja sinne tiedosto `hosts.ini`, jonne lisätään kontrolloitavat hostit. localhost on hyvä testatessa.
-* Jos ansible valittaa ajettaessa pythonista, lisätään hosts.ini tiedostoon python polku `/usr/bin/python3` kaikille koneille, ja ansible ei enää valita.
+* Jos ansible valittaa ajettaessa pythonista, lisätään hosts.ini tiedostoon python tulkin polku `/usr/bin/python3` kaikille koneille, ja ansible ei enää valita.
 * Ansiblen konfiguraatiotiedostoon `ansible.cfg` voi lisätä oletukseksi `hosts.ini` tiedoston, jolloin sitä ei tarvitse kirjoittaa jokaisella ajokerralla.
 * `Site.yml` tiedostoon lisätään roolit koneryhmittäin - eli mitkä roolit halutaan millekkin koneille.
 * Rooleille oma kansio `roles`, jonka sisällä rooleille omat kansionsa. Esim `roles/apache2`
 * tree-ohjelma on kätevä piirtämään tiedostorakenteen loogisesti terminaaliin. Sillä on hyvä aloittaa ongelmien etsiminen, kun joku ei toimi tai tiedosto x on unohtunut.
 
-## a) Paikallista Tehty tehtävässä h0 oikeasti netissä, kohdassa a) Linkki: https://github.com/elmo26/palvelinten_hallinta/blob/main/h0_oikeasti_netissa.md
+## a) Paikallista Tehty tehtävässä h0 oikeasti netissä, kohdassa a) 
+Linkki: https://github.com/elmo26/palvelinten_hallinta/blob/main/h0_oikeasti_netissa.md
 
 ## b) Sshecrets
 Olin tehnyt tämän tunnilla, mutta koska tehtävässä käskettiin asentamaan ssh demoni käsin, poistin sen ensin koneeltani. Pysäytin ssh demonin komennolla `sudo systemctl stop ssh` ja varmistin, että se on pois päältä katsomalla statuksen komennolla `systemctl status ssh`.
@@ -27,7 +28,7 @@ Poistin ssh-demonin komennolla `sudo apt remove openssh-server`. Tämän jälkee
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/ccbfc3ed-45b8-4ef2-98c9-d7284d27d89b" />
 Kuva 1. Ssh-demonin (serverin) asennus
 
-Tämän jälkeen piti testata ssh:n toimivuus joten ajoin palvelun ylös komennolla `sudo systemctl start ssh` ja sen jälkeen otin ssh-yhteyden localhostille. 
+Tämän jälkeen piti testata ssh:n toimivuus joten ajoin palvelun ylös komennolla `sudo systemctl start ssh` ja sen jälkeen otin ssh-yhteyden localhostille `ssh localhost`. 
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/e7b9be82-6d61-40d6-af51-1c5be6e7832f" />
 
@@ -49,7 +50,7 @@ Tämän jälkeen ajoin komennon `ssh-copy-id localhost`, joka lisää authorized
 Kuva 4. Julkisen avaimen lisääminen kohteeseen, kirjautuminen avaimella.
 
 ## d) Hei Ansible
-Aloitin tehtävän asentamalla tiivistelmässä mainitut ohjelmat komennolla `sudo apt update && sudo apt install ansible micro tree`. Ansible oli ainoa pakollinen, mutta mikco näytti sen verran hyvältä editorilta, ja tree tässä kohdassa kätevältä avulta tiedostorakenteiden havainnollistamiseen, että asensin molemmat.
+Aloitin tehtävän asentamalla tiivistelmässä mainitut ohjelmat komennolla `sudo apt update && sudo apt install ansible micro tree`. Ansible oli ainoa pakollinen, mutta micro näytti sen verran hyvältä editorilta, ja tree tässä kohdassa kätevältä avulta tiedostorakenteiden havainnollistamiseen, että asensin molemmat.
 
 Asennusten jälkeen tein suoraan koko tarvitsemani hakemistorakenteen kerralla, koska koin sen havainnollistavan asioita. Itse ansible hakemiston tein käyttäjäni kotihakemistoon. Tässä käytin pohjana pitkälti oppitunnin asioita ja kohdassa x) läpikäytyä artikkelia Hello Ansible [(Karvinen 2026)](https://terokarvinen.com/hello-ansible/).
 
