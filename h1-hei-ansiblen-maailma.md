@@ -51,7 +51,7 @@ Kuva 4. Julkisen avaimen lisääminen kohteeseen, kirjautuminen avaimella.
 ## d) Hei Ansible
 Aloitin tehtävän asentamalla tiivistelmässä mainitut ohjelmat komennolla `sudo apt update && sudo apt install ansible micro tree`. Ansible oli ainoa pakollinen, mutta mikco näytti sen verran hyvältä editorilta, ja tree tässä kohdassa kätevältä avulta tiedostorakenteiden havainnollistamiseen, että asensin molemmat.
 
-Asennusten jälkeen tein suoraan koko tarvitsemani hakemistorakenteen kerralla, koska koin sen havainnollistavan asioita. Itse ansible hakemiston tein käyttäjäni kotihakemistoon. Tässä käytin pohjana pitkälti oppitunnin asioita ja kohdassa x) läpikäytyä artikkelia Hello Ansible [(Karvinen 2026)](https://terokarvinen.com/hello-ansible/)
+Asennusten jälkeen tein suoraan koko tarvitsemani hakemistorakenteen kerralla, koska koin sen havainnollistavan asioita. Itse ansible hakemiston tein käyttäjäni kotihakemistoon. Tässä käytin pohjana pitkälti oppitunnin asioita ja kohdassa x) läpikäytyä artikkelia Hello Ansible [(Karvinen 2026)](https://terokarvinen.com/hello-ansible/).
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/7568ad94-af1e-4c05-8079-7e3e8fed68c0" />
 
