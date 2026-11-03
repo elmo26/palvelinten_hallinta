@@ -67,10 +67,34 @@ Kuva 5. Tein tehtävään tarvittavan tiedostorakenteen valmiiksi, mielestäni s
 Kuva 6. Kaikki tiedostot sisältöineen
 
 
+
 Tämän jälkeen yritin ajaa komennon `ansible-playbook site.yml`, mutta rooli oli virheellisesti nimetty `hello`, eikä `hei_maailma`. Korjasin asian ja sain komennon läpi, ansible ajoi ssh:n yli komennon ja lopputuloksena ilmoitti muuttaneensa yhtä asiaa. Ajoin vielä komennon  `cat tmp/hello-ansible` varmistaakseni että muutos varmasti toteutui.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/ba3adca9-4efd-401a-a715-ac5a2cf4ee0d" />
 Kuva 7. Ansible-playbook ongelma, ajo ja varmistus.
+
+## Tiedostojen loppukonfiguraatio
+
+
+### hosts.ini
+`localhost
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3`
+
+### ansible.cfg
+`[defaults]
+inventory = hosts.ini`
+
+### site.yml
+`- hosts: all 
+   roles: 
+    - hei_maailma`
+
+### ~/ansible/roles/hello/tasks/main.yml
+`- copy:
+    dest: /tmp/hei_maailma
+    content: "Hei maailma :)"`
+
 
 ## e) Vapaaehtoinen bonus
 
