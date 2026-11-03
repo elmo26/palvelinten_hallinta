@@ -12,7 +12,7 @@
 ### Tiivistelmä Hello Ansible [(Karvinen 2026)](https://terokarvinen.com/hello-ansible/)
 * Asenna Ansible (ja pari ylimääräistä työkalua) `sudo apt-get update && sudo apt-get install ansible micro bash-completion tree` 
 * Tehdään kansio `ansible` konfiguraatiota varten ja sinne tiedosto `hosts.ini`, jonne lisätään kontrolloitavat hostit. localhost on hyvä testatessa.
-* Jos ansible valittaa ajettaessa pythonista, lisätään hosts.ini tiedostoon python kääntäjän polku `/usr/bin/python3` kaikille koneille, ja ansible ei enää valita.
+* Jos ansible valittaa ajettaessa pythonista, lisätään hosts.ini tiedostoon python polku `/usr/bin/python3` kaikille koneille, ja ansible ei enää valita.
 * Ansiblen konfiguraatiotiedostoon `ansible.cfg` voi lisätä oletukseksi `hosts.ini` tiedoston, jolloin sitä ei tarvitse kirjoittaa jokaisella ajokerralla.
 * `Site.yml` tiedostoon lisätään roolit koneryhmittäin - eli mitkä roolit halutaan millekkin koneille.
 * Rooleille oma kansio `roles`, jonka sisällä rooleille omat kansionsa. Esim `roles/apache2`
