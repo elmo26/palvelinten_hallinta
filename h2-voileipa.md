@@ -64,6 +64,9 @@ Lopussa pistin  `site.yml` tiedostoon `become=true` ja roolin `rauski`. Become =
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/7bfd8158-3090-408e-bb16-d34f60b6f355" />
 Kuva 4. rauski-roolin sisältö.
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/dcaccc7d-dd53-4729-a2ca-48acdf6f69de" />
+Kuva 5. ansible-playbookin ajo uusilla asetuksilla.
+
 
 
 ## c) File
