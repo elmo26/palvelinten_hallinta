@@ -87,6 +87,10 @@ Update cache tekeee saman kuin sudo apt-get update (ansiblen dokumentaatio, ansi
 Kuva 6. hakemistorakenne ja uuden roolin sisältö.
 
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/0b34e99a-3ac1-4232-bae0-2286283f754b" />
+Kuva 7. ansible-playbookin ajo ja muutosten varmistus.
+
+
 
 ## d) File
 
