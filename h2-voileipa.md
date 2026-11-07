@@ -27,6 +27,8 @@
 
 ## a) sudoless
 
+Tässä oli tehtävänä tehdä käyttäjä, jolla voi ajaa komentoja sudona ilman salasanaa.
+
 Aloitin luomalla uuden käyttäjän nimeltä rauski `sudo adduser rauski`. Loin käyttäjäle salasanan, ja tämän jälkeen loin uuden ryhmän nimeltä sudoless komennolla `sudo adddgroup sudoless`.
 Sitten lisäsin käyttäjän rauski sudoless-ryhmään komennolla `sudo adduser sudoless rauski`.
 
