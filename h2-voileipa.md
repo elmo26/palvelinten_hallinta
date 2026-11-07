@@ -79,6 +79,10 @@ Kuva 5. ansible-playbookin ajo uusilla asetuksilla toisen kerran.
 
 ## c) Package
 
+Aloitin tekemällä oman polun ja roolin paketeille polkuun `roles/paketit/tasks/main.yml`. Määrittelin tiedostoon `main.yml` `- name Asenna paketit` task nameksi. Sitten määrittelin `ansible.builtin.apt: name: - apache2 - curl` eli asennettavat paketit. Sekä `update cache: True state: latest`. Update cache tekeee saman kuin sudo apt-get update (ansiblen dokumentaatio, ansible-doc apt) ja state: latest päivittää viimeisimpään saatavaan pakettiin.
+
+
+
 ## d) File
 
 ## e) Jotain muuta
