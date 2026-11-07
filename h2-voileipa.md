@@ -49,6 +49,8 @@ tuli kun olin poistanut `/tmp/hello-ansible` kansion.
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9d498495-d112-4784-9837-a1ea88b3b577" />
 Aloitustilanne ja nykyinen ansiblen konfiguraatio.
 
+## c) File
+
 ## d) File
 
 ## e) Jotain muuta
