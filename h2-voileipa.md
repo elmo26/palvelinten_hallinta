@@ -27,6 +27,14 @@
 
 ## a) sudoless
 
+Aloitin luomalla uuden käyttäjän ja annoin käyttäjälle nimeksi `rauski`. `sudo adduser rauski`. Loin käyttäjäle salasanan, ja tämän jälkeen loin uuden ryhmän sudoless komennolla `sudo adddgroup sudoless`.
+Sitten lisäsin käyttäjän rauski sudoless-ryhmään komennolla `sudo adduser sudoless rauski`.
+
+Avasin taustalle root shellin `sudo su root`, jos jotain menee pieleen niin roottina voi ainakin yrittää fiksata tilanteen. Sitten vaihdoin takaisin normaaliin ikkunaan.
+
+Tämän jälkeen avasin sudoless tiedoston komennolla `sudo visudo /etc/sudoers.d/sudoless` ja lisäsin sinne seuraavan komennon `%sudoless ALL = (ALL) NOPASSWD:ALL`. Käytännössä tämä tarkoittaa
+seuraavaa: `%sudoless` ryhmä sudoers (jonka tein aikaisemmin), `ALL` kaikki koneet `(ALL)` voi tulla miksi käyttähäksi tahansa `NOPASSWD` älä kysy salasanaa `ALL` kaikki komennot sallittuja.
+
 ## b) Antero
 
 ## d) File
