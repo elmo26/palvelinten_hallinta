@@ -43,6 +43,11 @@ Kuva 1. sudo ilman salasanaa.
 
 ## b) Antero
 
+Aloitin tehtävän katsomalla, että nykyinen konfiguraatio toimii ajamalla komennon `ansible-playbook site.yml`. Kaikki näytti olevan kunnossa
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9d498495-d112-4784-9837-a1ea88b3b577" />
+Aloitustilanne ja nykyinen ansiblen konfiguraatio.
+
 ## d) File
 
 ## e) Jotain muuta
