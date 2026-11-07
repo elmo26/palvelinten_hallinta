@@ -83,6 +83,9 @@ Aloitin tekemällä oman polun ja roolin paketeille polkuun `roles/paketit/tasks
 
 Update cache tekeee saman kuin sudo apt-get update (ansiblen dokumentaatio, ansible-doc apt) ja state: latest päivittää viimeisimpään saatavaan pakettiin.
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/4148fb96-141f-4e0b-a54b-f415e1cdf282" />
+Kuva 6. hakemistorakenne ja uuden roolin sisältö.
+
 
 
 ## d) File
