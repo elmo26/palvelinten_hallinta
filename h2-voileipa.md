@@ -35,7 +35,11 @@ Avasin taustalle root shellin `sudo su root`, jos jotain menee pieleen niin root
 Tämän jälkeen avasin sudoless tiedoston komennolla `sudo visudo /etc/sudoers.d/sudoless` ja lisäsin sinne seuraavan komennon `%sudoless ALL = (ALL) NOPASSWD:ALL`. Käytännössä tämä tarkoittaa
 seuraavaa: `%sudoless` ryhmä sudoers (jonka tein aikaisemmin), `ALL` kaikki koneet `(ALL)` voi tulla miksi käyttähäksi tahansa `NOPASSWD` älä kysy salasanaa `ALL` kaikki komennot sallittuja.
 
-Nyt sudon pitäisi toimia ilman salasanaa rauski-käyttäjällä. 
+Nyt sudon pitäisi toimia ilman salasanaa rauski-käyttäjällä. Kokeilin printata tekstiä terminaaliin sudona ja salasanaa ei kysytty joten homma toimii.
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/a5af3cc9-f72b-48e9-b5c8-a0bbcb7c33c2" />
+Kuva 1. sudo ilman salasanaa.
+
 
 ## b) Antero
 
