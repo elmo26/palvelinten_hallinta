@@ -98,6 +98,9 @@ Kuten kuvasta näkyy, muutos tapahtui ja curl ja apache2 on asennettuna. Ne siis
 
 ## d) File
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/6e07598c-f591-4459-8387-9ec01a4dadf6" />
+Kuva 8. Monirivinen tekstitiedosto, omistaja ryhmä ja oikeudet.
+
 ## e) Jotain muuta
 
 ## Lähteet
