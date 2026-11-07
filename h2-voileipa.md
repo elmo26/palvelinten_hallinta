@@ -59,6 +59,8 @@ käyttäjä rauski, käyttäjän ryhmät sudoless, sudo ja adm. Ssh authorized_k
 
 Huomiona että tämä mahdollistaa sen, että käyttäjä tauski pystyy kontrolloimaan ansiblen kautta etäkoneita, joilla käyttäjä "rauski" tekee asioita. Eli siis käyttäjän tauski julkinen avain laitetaan rauskin authorized_keys tiedostoihin etäkoneilla.
 
+Lopussa kopioidaan 
+
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/7bfd8158-3090-408e-bb16-d34f60b6f355" />
 Kuva 4. rauski-roolin sisältö.
 
