@@ -47,14 +47,20 @@ Aloitin tehtävän katsomalla, että nykyinen konfiguraatio toimii ajamalla kome
 tuli kun olin poistanut `/tmp/hello-ansible` kansion.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9d498495-d112-4784-9837-a1ea88b3b577" />
-Aloitustilanne ja nykyinen ansiblen konfiguraatio.
+Kuva 2. Aloitustilanne ja nykyinen ansiblen konfiguraatio.
 
 Tämän jälkeen tein uuden roolin, johon on tarkoitus automatisoida salasanaton sudon käyttö rauski-käyttäjän alle .
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/917f1d13-1a2c-43fd-9955-2b882f7fa675" />
+Kuva 3. Uusi rooli
+
+Sitten aloin tekemään rauski-roolin alle `main.yml` tiedostoon automatisoitua toteutusta samasta asiasta mitä a-kohdassa tein manuaalisesti. Kuvassa 4. näkyy toteutus: lyhykäisyydessään ryhmänä on sudoless,
+käyttäjä rauski, käyttäjän ryhmät sudoless, sudo ja adm. Ssh authorized_key on käyttäjän "tauski" eli oman lokaalin käyttäjäni avain. 
+
+Huomiona että tämä mahdollistaa sen, että käyttäjä tauski pystyy kontrolloimaan ansiblen kautta etäkoneita, joilla käyttäjä "rauski" tekee asioita. Eli siis käyttäjän tauski julkinen avain laitetaan rauskin authorized_keys tiedostoihin etäkoneilla.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/7bfd8158-3090-408e-bb16-d34f60b6f355" />
-
+Kuva 4. rauski-roolin sisältö.
 
 ## c) File
 
