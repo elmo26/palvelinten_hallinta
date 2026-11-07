@@ -70,12 +70,11 @@ Kuva 4. rauski-roolin sisältö.
 
 Lopuksi muutin vielä `hosts.ini` tiedostoon `localhost` tilalle `rauski@localhost`, jotta ansible ajaa oikealla käyttäjällä. Alla näkyy kuvassa toisen kerran ajettu ansible-playbook.
 Ensimmäisellä kerralla ansible-playbook site.yml piti ajaa `--ask-become-pass` parametrin kanssa, koska sudoa ei oltu vielä siinä kohdassa automatisoitu, ja sudon automatisoiminen vaati sudoa itsessään. Jätin kuvan 
-ensimmäisestä ajosta pois, sillä en halunnut tehdäraportista aivan liian pitkää.
+ensimmäisestä ajosta pois, sillä en halunnut tehdä raportista aivan liian pitkää.
 
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/dcaccc7d-dd53-4729-a2ca-48acdf6f69de" />
 Kuva 5. ansible-playbookin ajo uusilla asetuksilla toisen kerran.
-
 
 
 ## c) File
