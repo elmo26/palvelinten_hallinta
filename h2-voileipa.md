@@ -49,6 +49,13 @@ tuli kun olin poistanut `/tmp/hello-ansible` kansion.
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9d498495-d112-4784-9837-a1ea88b3b577" />
 Aloitustilanne ja nykyinen ansiblen konfiguraatio.
 
+Tämän jälkeen tein uuden roolin, johon on tarkoitus automatisoida salasanaton sudon käyttö rauski-käyttäjän alle .
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/917f1d13-1a2c-43fd-9955-2b882f7fa675" />
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/7bfd8158-3090-408e-bb16-d34f60b6f355" />
+
+
 ## c) File
 
 ## d) File
