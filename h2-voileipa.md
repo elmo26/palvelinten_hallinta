@@ -27,7 +27,7 @@
 
 ## a) sudoless
 
-Aloitin luomalla uuden käyttäjän ja annoin käyttäjälle nimeksi `rauski`. `sudo adduser rauski`. Loin käyttäjäle salasanan, ja tämän jälkeen loin uuden ryhmän sudoless komennolla `sudo adddgroup sudoless`.
+Aloitin luomalla uuden käyttäjän nimeltä rauski `sudo adduser rauski`. Loin käyttäjäle salasanan, ja tämän jälkeen loin uuden ryhmän nimeltä sudoless komennolla `sudo adddgroup sudoless`.
 Sitten lisäsin käyttäjän rauski sudoless-ryhmään komennolla `sudo adduser sudoless rauski`.
 
 Avasin taustalle root shellin `sudo su root`, jos jotain menee pieleen niin roottina voi ainakin yrittää fiksata tilanteen. Sitten vaihdoin takaisin normaaliin ikkunaan.
