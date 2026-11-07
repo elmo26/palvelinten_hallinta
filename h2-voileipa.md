@@ -35,7 +35,7 @@ Avasin taustalle root shellin `sudo su root`, jos jotain menee pieleen niin root
 Tämän jälkeen avasin sudoless tiedoston komennolla `sudo visudo /etc/sudoers.d/sudoless` ja lisäsin sinne seuraavan komennon `%sudoless ALL = (ALL) NOPASSWD:ALL`. Käytännössä tämä tarkoittaa
 seuraavaa: `%sudoless` ryhmä sudoers (jonka tein aikaisemmin), `ALL` kaikki koneet `(ALL)` voi tulla miksi käyttähäksi tahansa `NOPASSWD` älä kysy salasanaa `ALL` kaikki komennot sallittuja.
 
-Nyt sudon pitäisi toimia ilman salasanaa. Halusin kokeilla asiaa ansiblella, joten lisäsin ensin `become:true` site.yml -tiedostoon. Tämä siis käytännössä tarkoittaa sudoa.
+Nyt sudon pitäisi toimia ilman salasanaa rauski-käyttäjällä. 
 
 ## b) Antero
 
