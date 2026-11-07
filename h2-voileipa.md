@@ -105,7 +105,10 @@ Viimeinen r tarkoittaa lukuoikeutta ryhmälle (sudoless tässä tapauksessa). Se
 Viimeiset kolme viivaa ovat ryhmään kuulumattomien käyttäjien luku, kirjoitus ja suoritusoikeudet eli ei mitään.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/6e07598c-f591-4459-8387-9ec01a4dadf6" />
+
 Kuva 8. Monirivinen tekstitiedosto, omistaja ryhmä ja oikeudet.
+
+Alemmassa kuvassa ajettuna ansible-playbook, sen tekemä tekstitiedosto ja tiedoston oikeudet kuten aiemmin kuvattu.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/af9db127-98f9-4ac8-ab37-58a86b2648b0" />
 Kuva 9. Ansible-playbook, tehty tiedosto ja sen oikeudet.
