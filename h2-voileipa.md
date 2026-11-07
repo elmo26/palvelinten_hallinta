@@ -32,8 +32,6 @@ Tässä oli tehtävänä tehdä käyttäjä, jolla voi ajaa komentoja sudona ilm
 Aloitin luomalla uuden käyttäjän nimeltä rauski `sudo adduser rauski`. Loin käyttäjäle salasanan, ja tämän jälkeen loin uuden ryhmän nimeltä sudoless komennolla `sudo adddgroup sudoless`.
 Sitten lisäsin käyttäjän rauski sudoless-ryhmään komennolla `sudo adduser sudoless rauski`.
 
-Avasin taustalle root shellin `sudo su root`, jos jotain menee pieleen niin roottina voi ainakin yrittää fiksata tilanteen. Sitten vaihdoin takaisin normaaliin ikkunaan.
-
 Tämän jälkeen avasin sudoless tiedoston komennolla `sudo visudo /etc/sudoers.d/sudoless` ja lisäsin sinne seuraavan komennon `%sudoless ALL = (ALL) NOPASSWD:ALL`. Käytännössä tämä tarkoittaa
 seuraavaa: `%sudoless` ryhmä sudoers (jonka tein aikaisemmin), `ALL` kaikki koneet `(ALL)` voi tulla miksi käyttähäksi tahansa `NOPASSWD` älä kysy salasanaa `ALL` kaikki komennot sallittuja.
 
@@ -45,7 +43,7 @@ Kuva 1. sudo ilman salasanaa.
 
 ## b) Antero
 
-Aloitin tehtävän katsomalla, että nykyinen konfiguraatio toimii ajamalla komennon `ansible-playbook site.yml` kaksi kertaa. Kaikki näytti olevan kunnossa, ensimmäisellä kerralla muutos
+Aloitin tehtävän katsomalla, että nykyinen h1 tehtävässä tehty konfiguraatio toimii, ajamalla komennon `ansible-playbook site.yml` kaksi kertaa. Kaikki näytti olevan kunnossa, ensimmäisellä kerralla muutos
 tuli kun olin poistanut `/tmp/hello-ansible` kansion.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9d498495-d112-4784-9837-a1ea88b3b577" />
@@ -56,7 +54,7 @@ Tämän jälkeen tein uuden roolin, johon on tarkoitus automatisoida salasanaton
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/917f1d13-1a2c-43fd-9955-2b882f7fa675" />
 Kuva 3. Uusi rooli
 
-Sitten aloin tekemään rauski-roolin alle `main.yml` tiedostoon automatisoitua toteutusta samasta asiasta mitä a-kohdassa tein manuaalisesti. Kuvassa 4. näkyy toteutus: lyhykäisyydessään ryhmänä on sudoless,
+Sitten aloin tekemään rauski-roolin alle `main.yml` tiedostoon automatisoitua toteutusta samasta asiasta mitä a-kohdassa tein manuaalisesti: kopioin pohjan toteutukseen [Passwordless Sudo with Ansible artikkelista](https://terokarvinen.com/passwordless-sudo-with-ansible/). Kuvassa 4. näkyy toteutus: lyhykäisyydessään ryhmänä on sudoless,
 käyttäjä rauski, käyttäjän ryhmät sudoless, sudo ja adm. Ssh authorized_key on käyttäjän "tauski" eli oman lokaalin käyttäjäni avain. 
 
 Huomiona että tämä mahdollistaa sen, että käyttäjä tauski pystyy kontrolloimaan ansiblen kautta etäkoneita, joilla käyttäjä "rauski" tekee asioita. Eli siis käyttäjän tauski julkinen avain laitetaan rauskin authorized_keys tiedostoihin etäkoneilla.
