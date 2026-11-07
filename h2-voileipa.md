@@ -77,7 +77,7 @@ ensimmäisestä ajosta pois, sillä en halunnut tehdä raportista aivan liian pi
 Kuva 5. ansible-playbookin ajo uusilla asetuksilla toisen kerran.
 
 
-## c) File
+## c) Package
 
 ## d) File
 
