@@ -126,6 +126,8 @@ Lisäsin uuden roolin `roles/git/tasksmain.yml `jälleen kerran `site.yml` tiedo
 Git ei tykännyt siitä että yritettiin käyttäjänä `rauski` ladata käyttäjän `tauski` kotikahemiston alle, joten korjasin asian `git config --global --add safe.directory /home/tauski/git`, jonka ansible antoi virheilmoituksessa vaihtoehdoksi. Sitten kokeilin uudestaan, ja homma meni läpi.
 
 
+Kuten alemmasta kuvasta näkyy, onnistuin lataamaan toisen kurssin tehdyt tehtävät onnistuneesti ansible-playbookin avulla hakemistoon `/home/tauski/git`.
+
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/526e7fa9-7212-49e3-84f2-f80ef2019c22" />
 Kuva 11. Gitistä ladattu repo ansible-playbookin avulla.
 
