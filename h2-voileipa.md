@@ -114,7 +114,7 @@ Kuva 9. Ansible-playbook, tehty tiedosto ja sen oikeudet.
 
 ## e) Jotain muuta
 
-Kävin läpi listaa asioista, joita voisi kokeilla ja löysin moduulin `ansible.builtin.git`, joten ajattelin ladata toisen kurssin repositorion itselleni ansiblen kautta käyttämällä tätä moduulia. Katsoin esimerkkkejä komennolla `ansible.doc git` ja toteutin.
+Kävin läpi listaa asioista, joita voisi kokeilla ja löysin moduulin `ansible.builtin.git`, joten ajattelin ladata toisen kurssin repositorion itselleni ansiblen kautta käyttämällä tätä moduulia. Katsoin esimerkkkejä komennolla `ansible-doc git` ja toteutin.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/5900a395-7346-4b6d-842b-836a4de32bb6" />
 
@@ -139,3 +139,4 @@ Karvinen, T 2026 Sudo without password. https://terokarvinen.com/passwordless-su
 
 Karvinen, T 2026 Passwordless Sudo with Ansible. https://terokarvinen.com/passwordless-sudo-with-ansible/ Luettu 7.11.2026
 
+ansible-doc git, apt Luettu 8.11.2026
