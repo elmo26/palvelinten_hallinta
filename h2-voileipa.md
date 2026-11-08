@@ -122,7 +122,7 @@ Kuva 10. Git
 
 Lisäsin uuden roolin `roles/git/tasksmain.yml `jälleen kerran `site.yml` tiedostoon ja koitin ajaa ansible-playbookin. Sain errorin että gittiä ei ole asennettu, joten asensin sen ja kokeilin uudelleen.
 
-Git ei tykännyt siitä että yritettiin käyttäjänä `rauski` ladata käyttäjän `tauski` kotikahemiston alle, joten korjasin asian `git config --global --add safe.directory /home/tauski/git`, jonka ansible antoi virheilmoituksessa vaihtoehdoksi. Sitten kokeilin uudestaan, ja homma meni läpi.
+Git ei tykännyt siitä että yritettiin käyttäjänä `rauski` ladata käyttäjän `tauski` kotikahemiston alle, joten korjasin asian komennolla `git config --global --add safe.directory /home/tauski/git`, jonka ansible antoi virheilmoituksessa vaihtoehdoksi. Sitten kokeilin uudestaan, ja homma meni läpi.
 
 
 Kuten alemmasta kuvasta näkyy, onnistuin lataamaan toisen kurssin tehdyt tehtävät onnistuneesti ansible-playbookin avulla hakemistoon `/home/tauski/git`.
