@@ -115,6 +115,8 @@ Kuva 9. Ansible-playbook, tehty tiedosto ja sen oikeudet.
 
 ## e) Jotain muuta
 
+Kävin läpi listaa asioista, joita voisi kokeilla ja löysin moduulin `ansible.builtin.git`, joten ajattelin ladata toisen kurssin repositorion itselleni ansiblen kautta käyttämällä tätä moduulia.
+
 ## Lähteet
 
 Karvinen, T 2026 palvelinten hallinta. https://terokarvinen.com/palvelinten-hallinta/ Luettu 7.11.2026
