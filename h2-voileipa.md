@@ -115,10 +115,14 @@ Kuva 9. Ansible-playbook, tehty tiedosto ja sen oikeudet.
 
 ## e) Jotain muuta
 
-Kävin läpi listaa asioista, joita voisi kokeilla ja löysin moduulin `ansible.builtin.git`, joten ajattelin ladata toisen kurssin repositorion itselleni ansiblen kautta käyttämällä tätä moduulia.
+Kävin läpi listaa asioista, joita voisi kokeilla ja löysin moduulin `ansible.builtin.git`, joten ajattelin ladata toisen kurssin repositorion itselleni ansiblen kautta käyttämällä tätä moduulia. Katsoin esimerkkkejä komennolla `ansible.doc git` ja toteutin.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/5900a395-7346-4b6d-842b-836a4de32bb6" />
 Kuva 10. Git
+
+Lisäsin uuden roolin `roles/git/tasksmain.yml `jälleen kerran `site.yml` tiedostoon ja koitin ajaa ansible-playbookin. Sain errorin että gittiä ei ole asennettu, joten asensin sen ja kokeilin uudelleen.
+
+Git ei tykännyt siitä että yritettiin käyttäjänä `rauski` ladata käyttäjän `tauski` kotikahemiston alle, joten korjasin asian `git config --global --add safe.directory /home/tauski/git`, jonka ansible antoi virheilmoituksessa vaihtoehdoksi. Sitten kokeilin uudestaan.
 
 ## Lähteet
 
