@@ -26,7 +26,7 @@
 
 ## y) Infra-uutiset
 
-Tehtävänä oli etsiä jokin artikkeli sivustolta news.ycombinator.com, mikä liittyi keskitettyyn hallintaan. En löytänyt paljoakaan uusia artikkeleita aiheesta, joten nappasin aiheeksi postauksen, jossa oli linkki keskitettyyn ansiblella tehtyyn kovennus konfiguraatioon, mikä on tarkoitettu linuxille ssh:n, Nginx:n ja MYSQL:n koventamiseen eli suojaamiseen.  Linkki :[Ansible battle tested hardening for Linux, SSH, Nginx, MySQL](https://news.ycombinator.com/item?id=46529507)
+Tehtävänä oli etsiä jokin artikkeli sivustolta news.ycombinator.com, mikä liittyi keskitettyyn hallintaan. En löytänyt paljoakaan uusia artikkeleita aiheesta, joten nappasin aiheeksi postauksen, jossa oli linkki keskitettyyn ansiblella tehtyyn kovennus konfiguraatioon, mikä on tarkoitettu linuxille ssh:n, Nginx:n ja MYSQL:n koventamiseen eli suojaamiseen.  Linkki : [Ansible battle tested hardening for Linux, SSH, Nginx, MySQL](https://news.ycombinator.com/item?id=46529507)
 
 * Toimii useilla Linux-versioilla, kuten `Debian 12/13`, `Ubuntu 22.04/24.04/26.04` ja `Rocky Linux 8/9/10`
 * Toimii seuraavilla tietokannoilla `MariaDB >= 5.5.65, >= 10.1.45, >= 10.3.17`, `MySQL >= 5.7.31, >= 8.0.3`
