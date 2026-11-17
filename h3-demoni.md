@@ -1,5 +1,7 @@
 # h3 Demoni 
 
+Tämän raportin kaikki tehtävät on tehty debian 13 virtuaalikoneella paikallisesti.
+
 ## x) Lue ja tiivistä
 
 ### Tiivistelmä [Karvinen 2026 Apache installed with Ansible - quick notes](https://terokarvinen.com/apache-ansible/)
@@ -34,6 +36,12 @@ Tehtävänä oli etsiä jokin artikkeli sivustolta news.ycombinator.com, mikä l
 
 
 ## a) Apassi. Asenna Apache 2 käsin
+
+Tehtävänä oli asentaa apache2, joten aloitin tavanomaisesti päivittämällä pakettilistat ja sitten asentamalla apache2-paketin.
+`sudo apt-get update` ja `sudo apt-get install apache2`.
+
+Asennuksen jälkeen ajoin vielä komennon `sudo systemctl enable --now apache2` käynnistääkseni demonin ja varmistaakseni, että se käynnistyy myös automaattisesti koneen käynnistyessä.
+Sitten katsoin palvelun tilan komennolla `sudo systemctl status apache2.service`. Tästä sain varmistuksen, että palvelu on ylhäällä `active(running)`. Tämän jälkeen menin vielä selaimella varmistamaan, että apachen automaattinen html-sivu näkyy.
 
 ## b) Moottorix. Asenna Nginx käsin. Weppisivun tulee näkyä palvelimen etusivulla.
 
