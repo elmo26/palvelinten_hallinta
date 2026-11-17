@@ -43,6 +43,9 @@ Tehtävänä oli asentaa apache2, joten aloitin tavanomaisesti päivittämällä
 Asennuksen jälkeen ajoin vielä komennon `sudo systemctl enable --now apache2` käynnistääkseni demonin ja varmistaakseni, että se käynnistyy myös automaattisesti koneen käynnistyessä.
 Sitten katsoin palvelun tilan komennolla `sudo systemctl status apache2.service`. Tästä sain varmistuksen, että palvelu on ylhäällä `active(running)`. Tämän jälkeen menin vielä selaimella varmistamaan, että apachen automaattinen html-sivu näkyy.
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/bea46375-d793-45f9-81a0-e504d912c313" />
+Kuva 1. Apachen käynnistys ja varmistus.
+
 ## b) Moottorix. Asenna Nginx käsin. Weppisivun tulee näkyä palvelimen etusivulla.
 
 ## c) Automoottorix. Automatisoi Nginx asennus Ansiblella. Ylläpitäjän osuus Ansiblella riittää, itse HTML-weppisivut voi tehdä käsin.
