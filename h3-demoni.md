@@ -52,7 +52,24 @@ Kuva 2. Apachen automaattinen kotisivu.
 Tehtävänä oli tehdä weppisivusta tavallisen käyttäjän muokattavissa oleva ilman sudoa. Apache oletusarvoinen hakemisto on `/var/www/html` ja omistaja `root:root`, joten tavallinen käyttäjä ei pysty siellä olevia tiedostoja muokkaamaan.
 
 En jaksanut muuttaa hakemistopolkua, sillä sitten olisi tarvinnut muuttaa apachen konfigurointitiedostoja, joten ratkaisin ongelman vaihtamalla omistajuuden omalle käyttäjälleni `tauski` ja lisäämällä tarvittavat käyttöoikeudet muillekkin.
-`sudo chown -R tauski:www-data /var/www/html` ja `sudo chmod -R 775 /var/www/html/`. Suomeksi sanottuna omistaja tauski, ryhmä www-data , oikeudet 775 eli `-rwxrwxr-x`, Eli omistaja ja ryhmä luku, kirjoitus, suoritusoikeus, muut luku ja suoritusoikeus. -R suorittaa komennon rekursiivisesti
+
+
+Ajoin komennot `sudo chown -R tauski:www-data /var/www/html` ja `sudo chmod -R 775 /var/www/html/`. Suomeksi sanottuna omistaja tauski, ryhmä www-data , oikeudet 775 eli `-rwxrwxr-x`, Eli omistaja ja ryhmä saa luku, kirjoitus, suoritusoikeus, muut saa luku ja suoritusoikeus. -R suorittaa komennon rekursiivisesti kaikille polun sisällä oleville hakemistoille/tiedostoille.
+
+Sitten varmistin että konfigurointi onnistuu ilman sudoa komennolla `nano /var/www/html/index.html` ja pääsin sisään, jonka jälkeen muokkasin sivua.
+
+```<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"null"</title>
+</head>
+<body>
+    <h1>Apassi</h1>
+    <p> Hello :)))))))))</p>
+</body>
+</html>
+```
 
 ## b) Moottorix. Asenna Nginx käsin. Weppisivun tulee näkyä palvelimen etusivulla.
 
