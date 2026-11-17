@@ -49,6 +49,11 @@ Kuva 1. Apachen käynnistys ja varmistus.
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/a6968fe8-84ba-4a73-bb7f-24f9b03c6075" />
 Kuva 2. Apachen automaattinen kotisivu.
 
+Tehtävänä oli tehdä weppisivusta tavallisen käyttäjän muokattavissa oleva ilman sudoa. Apache oletusarvoinen hakemisto on `/var/www/html` ja omistaja `root:root`, joten tavallinen käyttäjä ei pysty siellä olevia tiedostoja muokkaamaan.
+
+En jaksanut muuttaa hakemistopolkua, sillä sitten olisi tarvinnut muuttaa apachen konfigurointitiedostoja, joten ratkaisin ongelman vaihtamalla omistajuuden omalle käyttäjälleni `tauski` ja lisäämällä tarvittavat käyttöoikeudet muillekkin.
+`sudo chown -R tauski:www-data /var/www/html` ja `sudo chmod -R 775 /var/www/html/`. Suomeksi sanottuna omistaja tauski, ryhmä www-data , oikeudet 775 eli `-rwxrwxr-x`, Eli omistaja ja ryhmä luku, kirjoitus, suoritusoikeus, muut luku ja suoritusoikeus. -R suorittaa komennon rekursiivisesti
+
 ## b) Moottorix. Asenna Nginx käsin. Weppisivun tulee näkyä palvelimen etusivulla.
 
 ## c) Automoottorix. Automatisoi Nginx asennus Ansiblella. Ylläpitäjän osuus Ansiblella riittää, itse HTML-weppisivut voi tehdä käsin.
