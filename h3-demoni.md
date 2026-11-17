@@ -46,6 +46,9 @@ Sitten katsoin palvelun tilan komennolla `sudo systemctl status apache2.service`
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/bea46375-d793-45f9-81a0-e504d912c313" />
 Kuva 1. Apachen käynnistys ja varmistus.
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/a6968fe8-84ba-4a73-bb7f-24f9b03c6075" />
+Kuva 2. Apachen automaattinen kotisivu.
+
 ## b) Moottorix. Asenna Nginx käsin. Weppisivun tulee näkyä palvelimen etusivulla.
 
 ## c) Automoottorix. Automatisoi Nginx asennus Ansiblella. Ylläpitäjän osuus Ansiblella riittää, itse HTML-weppisivut voi tehdä käsin.
