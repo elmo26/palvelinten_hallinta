@@ -77,9 +77,12 @@ Kuva 3. html-koodi ja weppisivu
 ## b) Moottorix. Asenna Nginx käsin. Weppisivun tulee näkyä palvelimen etusivulla.
 
 Aloitin tämän osion sulkemalla apachen, sillä sekä Apache että Nginx pyörivät oletuksena saman portin päällä.
-Tämän tein komennolla `sudo systemctl stop apache2`. Ajoin myös komennon `sudo systemctl disable apache2`. 
+Tämän tein komennolla `sudo systemctl stop apache2.service`. Ajoin myös komennon `sudo systemctl disable apache2.service`. 
 
-Tämän jälkeen tarkistin vielä että apache on alhaalla komennolla `sudo systemctl status apache2`
+Tämän jälkeen tarkistin vielä että apache on alhaalla komennolla `sudo systemctl status apache2.service`
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/11a51f46-3da8-4ea7-82a9-18f79388f9c9" />
+Kuva 4. Apachen sulkeminen.
 
 ## c) Automoottorix. Automatisoi Nginx asennus Ansiblella. Ylläpitäjän osuus Ansiblella riittää, itse HTML-weppisivut voi tehdä käsin.
 
