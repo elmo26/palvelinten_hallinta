@@ -71,6 +71,9 @@ Sitten varmistin että konfigurointi onnistuu ilman sudoa komennolla `nano /var/
 </html>
 ```
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/aac3a781-1c3a-45e0-b439-2e2fe4017f38" />
+Kuva 3. html-koodi ja weppisivu
+
 ## b) Moottorix. Asenna Nginx käsin. Weppisivun tulee näkyä palvelimen etusivulla.
 
 ## c) Automoottorix. Automatisoi Nginx asennus Ansiblella. Ylläpitäjän osuus Ansiblella riittää, itse HTML-weppisivut voi tehdä käsin.
