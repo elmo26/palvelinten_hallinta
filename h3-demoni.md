@@ -111,9 +111,14 @@ Kuva 6. Nginx html-tiedosto
 Tässä oli tehtävänä automatisoida Nginx asennus Ansiblella ja tehdä samat asiat kuin manuaalisesti tein aikaisemmin. Aloitin tehtävän poistamalla ansiblen`site.yml` -tiedostosta edellisen h2-tehtävän roolit, jotta ansible-playbookin ajossa ei kestä jokainen kerta niin kauaa.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/186bb318-e50c-4189-adc1-232cbab8acde" />
+
 Kuva 7. Ansiblen rakenne, site.yml roolit
 
+Seuraavaksi tein uuden roolin `roles/nginx/tasks/main.yml` ja määrittelin sinne nginx-paketin asennuksen (state present), html-tiedostojen ja hakemiston `/var/www/html/` oikeudet sekä omistajuudet (tauski:www-data,775).
+Nginx:in päällä olo varmistetaan service-moduulilla `state:started`, `enabled:yes`.
+
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/b797aaaa-231c-4b6f-9f89-c4c00b2c7b6d" />
+
 Kuva 8. Nginx asennus, oikeudet, omistajuudet
 
 ## Lähteet
