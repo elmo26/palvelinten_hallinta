@@ -44,9 +44,11 @@ Asennuksen jälkeen ajoin vielä komennon `sudo systemctl enable --now apache2` 
 Sitten katsoin palvelun tilan komennolla `sudo systemctl status apache2.service`. Tästä sain varmistuksen, että palvelu on ylhäällä `active(running)`. Tämän jälkeen menin vielä selaimella varmistamaan, että apachen automaattinen html-sivu näkyy.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/bea46375-d793-45f9-81a0-e504d912c313" />
+
 Kuva 1. Apachen käynnistys ja varmistus.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/a6968fe8-84ba-4a73-bb7f-24f9b03c6075" />
+
 Kuva 2. Apachen automaattinen kotisivu.
 
 Tehtävänä oli tehdä weppisivusta tavallisen käyttäjän muokattavissa oleva ilman sudoa. Apache oletusarvoinen hakemisto on `/var/www/html` ja omistaja `root:root`, joten tavallinen käyttäjä ei pysty siellä olevia tiedostoja muokkaamaan.
@@ -72,6 +74,7 @@ Sitten varmistin että konfigurointi onnistuu ilman sudoa komennolla `nano /var/
 ```
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/aac3a781-1c3a-45e0-b439-2e2fe4017f38" />
+
 Kuva 3. html-koodi ja weppisivu
 
 ## b) Moottorix. Asenna Nginx käsin. Weppisivun tulee näkyä palvelimen etusivulla.
@@ -89,6 +92,7 @@ Sitten asensin Nginx:n komennolla `sudo apt-get install nginx` ja pistin sen pä
 Tämän jälkeen varmistin että nginx on ylhäällä ja samalla katsoin onko sen automaattinen html-tiedosto ilmestynyt samaan paikkaan kuin apache2 tapauksessa oli, eli `/var/www/html/` polkuun. Alla olevasta kuvasta näkyy, että `index.nginx-debian.html` on samassa paikassa kuin apachen html-tiedosto.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/f9ef2f0f-049f-4794-9f1c-9cd8a2182a11" />
+
 Kuva 5. Nginx status, html-tiedosto.
 
 Tässäkin tapauksessa omistaja kyseisellä tiedostolla on `root`, joten vaihdoin `index.nginx-debian.html` tiedoston omistajaa komennolla `sudo chown tauski:www-data /var/www/html/index.nginx-debian.html`
