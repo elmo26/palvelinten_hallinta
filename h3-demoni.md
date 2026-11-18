@@ -125,6 +125,20 @@ Tämän jälkeen lisäsin roolin site.yml -tiedostoon ja ajoin ansible-playbooki
 
 Tämän jälkeen kokeilin avata weppisivun selaimessa, ja se avautui suoraan. Tämä todistaa sen, että automatisoitu Nginx:n asennus ja päälle laittaminen onnistui.
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/790f163f-8d07-4141-a70b-98a54e20de92" />
+
+Kuva 9. ansible-playbook, weppisivu
+
+Itse weppisivu jonka manuaalisesti tein aikaisemmin, pysyi samana, mutta sitä ei tässä tehtävässä tarvinnut automatisoida.
+
+Lopuksi kävin vielä katsomassa `/var/www/html/` hakemistossa `ls -l` komennolla omistajat ja oikeudet html-tiedostoista, jotka olivat ne, miksi olin ne ansiblessa määritellyt, joten tehtävä onnistui.
+
+Nginx:n turhan automaattisen `index.nginx-debian.html` tiedoston poiston olisi voinut automatisoida, mutta se jäi nyt tekemättä.
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/f1aa6a32-3d6e-442e-ab94-2b1f892861f3" />
+
+Kuva 10. tiedostojen omistaja, oikeudet.
+
 ## Lähteet
 
 Karvinen, T 2026 Palvelinten halinta https://terokarvinen.com/palvelinten-hallinta/ Luettu 17.11.2026
