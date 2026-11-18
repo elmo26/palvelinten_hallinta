@@ -56,7 +56,7 @@ Tehtävänä oli tehdä weppisivusta tavallisen käyttäjän muokattavissa oleva
 En jaksanut muuttaa hakemistopolkua, sillä sitten olisi tarvinnut muuttaa apachen konfigurointitiedostoja, joten ratkaisin ongelman vaihtamalla omistajuuden omalle käyttäjälleni `tauski` ja lisäämällä tarvittavat käyttöoikeudet muillekkin.
 
 
-Ajoin komennot `sudo chown -R tauski:www-data /var/www/html` ja `sudo chmod -R 775 /var/www/html/`. Suomeksi sanottuna omistaja tauski, ryhmä www-data , oikeudet 775 eli `-rwxrwxr-x`, Eli omistaja ja ryhmä saa luku, kirjoitus, suoritusoikeus, muut saa luku ja suoritusoikeus. -R suorittaa komennon rekursiivisesti kaikille polun sisällä oleville hakemistoille/tiedostoille.
+Ajoin komennot `sudo chown -R tauski:www-data /var/www/html` ja `sudo chmod -R 775 /var/www/html/`. Suomeksi sanottuna omistaja tauski, ryhmä www-data , oikeudet 775 eli `-rwxrwxr-x`, Eli omistaja ja ryhmä saa luku, kirjoitus, suoritusoikeuden, muut saa luku ja suoritusoikeuden. -R suorittaa komennon rekursiivisesti kaikille polun sisällä oleville hakemistoille/tiedostoille.
 
 Sitten varmistin että konfigurointi onnistuu ilman sudoa komennolla `nano /var/www/html/index.html` ja pääsin sisään, jonka jälkeen muokkasin sivua.
 
