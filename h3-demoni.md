@@ -35,7 +35,7 @@ Tehtävänä oli etsiä jokin artikkeli sivustolta news.ycombinator.com, mikä l
 * Toimii `OpenSSH 5.3 ->` ja `nginx 1.0.16 ->`
 
 
-## a) Apassi. Asenna Apache 2 käsin
+## a) Apassi. Asenna Apache 2 käsin. Weppisivun tulee näkyä palvelimen etusivulla. Sivun tulee olla tavallisen käyttäjän muokattavissa, ilman root- tai sudo-oikeuksia.
 
 Tehtävänä oli asentaa apache2, joten aloitin tavanomaisesti päivittämällä pakettilistat ja sitten asentamalla apache2-paketin.
 `sudo apt-get update` ja `sudo apt-get install apache2`.
@@ -86,10 +86,17 @@ Kuva 4. Apachen sulkeminen.
 
 Sitten asensin Nginx:n komennolla `sudo apt-get install nginx` ja pistin sen päälle samoin kuten apachenkin tapauksessa komennolla `sudo systemctl enable --now nginx.service`
 
-Tämän jälkeen varmistin että nginx on ylhäällä ja samalla katsoin onko sen automaattinen html-tiedosto ilmestynyt samaan paikkaan kuin apache2 tapauksessa oli, eli `/var/www/html/` polkuun.
+Tämän jälkeen varmistin että nginx on ylhäällä ja samalla katsoin onko sen automaattinen html-tiedosto ilmestynyt samaan paikkaan kuin apache2 tapauksessa oli, eli `/var/www/html/` polkuun. Alla olevasta kuvasta näkyy, että `index.nginx-debian.html` on samassa paikassa kuin apachen html-tiedosto.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/f9ef2f0f-049f-4794-9f1c-9cd8a2182a11" />
 Kuva 5. Nginx status, html-tiedosto.
+
+Tässäkin tapauksessa omistaja kyseisellä tiedostolla on `root`, joten vaihdoin `index.nginx-debian.html` tiedoston omistajaa komennolla `sudo chown tauski:www-data /var/www/html/index.nginx-debian.html`
+ja oikeuksia komennolla `sudo chmod 775 /var/www/html/index.nginx-debian.html`.
+
+Tämän jälkeen pääsin muokkaamaan tiedostoa ilman sudoa, komennolla `nano /var/www/html/index.nginx-debian.html`.
+
+Tässä tapauksessa
 
 ## c) Automoottorix. Automatisoi Nginx asennus Ansiblella. Ylläpitäjän osuus Ansiblella riittää, itse HTML-weppisivut voi tehdä käsin.
 
