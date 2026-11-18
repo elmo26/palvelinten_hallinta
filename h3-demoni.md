@@ -104,6 +104,11 @@ Kuva 6. Nginx html-tiedosto
 
 ## c) Automoottorix. Automatisoi Nginx asennus Ansiblella. Ylläpitäjän osuus Ansiblella riittää, itse HTML-weppisivut voi tehdä käsin.
 
+Tässä oli tehtävänä automatisoida Nginx asennus Ansiblella. Aloitin tehtävän poistamalla ansiblen`site.yml` -tiedostosta edellisen h2-tehtävän roolit, jotta ansible-playbookin ajossa ei kestä jokainen kerta niin kauaa.
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/186bb318-e50c-4189-adc1-232cbab8acde" />
+Kuva 7. Ansiblen rakenne, site.yml roolit.
+
 ## Lähteet
 
 Karvinen, T 2026 Palvelinten halinta https://terokarvinen.com/palvelinten-hallinta/ Luettu 17.11.2026
