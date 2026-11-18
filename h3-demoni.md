@@ -96,7 +96,11 @@ ja oikeuksia komennolla `sudo chmod 775 /var/www/html/index.nginx-debian.html`.
 
 Tämän jälkeen pääsin muokkaamaan tiedostoa ilman sudoa, komennolla `nano /var/www/html/index.nginx-debian.html`.
 
-Tässä tapauksessa
+Tässä tapauksessa tämä kaikki edellämainittu osoittautui turhaksi, sillä nginx mitä ilmeisemmin näyttää `index.html` sivu ennen omaa `index.nginx-debian.html` -tiedostoaan, mikäli `index.html` on samassa kansiossa. Tämän päättelin siitä että localhost-sivu pysyi samana, vaikka apache vaihtui Nginx:iin.
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9b5ac170-31e3-4b4d-890d-2209a0a2b592" />
+
+Kuva 6. Nginx html-tiedosto
 
 ## c) Automoottorix. Automatisoi Nginx asennus Ansiblella. Ylläpitäjän osuus Ansiblella riittää, itse HTML-weppisivut voi tehdä käsin.
 
