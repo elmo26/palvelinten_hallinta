@@ -121,6 +121,10 @@ Nginx:in päällä olo varmistetaan service-moduulilla `state:started`, `enabled
 
 Kuva 8. Nginx asennus, oikeudet, omistajuudet
 
+Tämän jälkeen lisäsin roolin site.yml -tiedostoon ja ajoin ansible-playbookin kaksi kertaa. Tämän jälkeen poistin Nginx-paketin komennolla `sudo apt-get remove nginx` ja muunsin `/var/www/html/` oikeudet komennolla `chmod 500` erilaisiksi, minkä jälkeen ajoin ansible-playbookin uudelleen.
+
+Tämän jälkeen kokeilin avata weppisivun selaimessa, ja se avautui suoraan. Tämä todistaa sen, että automatisoitu Nginx:n asennus ja päälle laittaminen onnistui.
+
 ## Lähteet
 
 Karvinen, T 2026 Palvelinten halinta https://terokarvinen.com/palvelinten-hallinta/ Luettu 17.11.2026
