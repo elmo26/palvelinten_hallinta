@@ -1,18 +1,18 @@
-#h4 Pizza Fantasia
+# h4 Pizza Fantasia
 
 ## x) Lue ja tiivistä
 
-## a) Räpylä Asenna itse valitsemasi demoni käsin. Jokin muu kuin tunnilla tai kotitehtävissä aiemmin asennettu, eli ei apache, ngninx eikä openssh-server. Kuten aina, testaa lopputulos.
+## a) Räpylä Asenna itse valitsemasi demoni käsin. Jokin muu kuin tunnilla tai kotitehtävissä aiemmin asennettu
 
 ## b) Automaatti Automatisoi valitsemasi demonin asennus Ansiblella.
 
-## c) Asetus Muuta asetustiedostoa herralla (master, "control node") ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
+## c) Asetus. Muuta asetustiedostoa herralla ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
-## d) Paikka remonttiin. Riko jotain asetuksia. Voit esimerkiksi poistaa demonin 'sudo apt-get purge foobar' (purge poistaa myös asetustiedostoja), poistaa asennuksen yhteydessä tulevan kansion (sudo rm -r /etc/foobar/ # vaarallista) tms. Ja sitten ajaa ansible-roolisi uudestaan ja todeta, että se korjaa tilanteen.
+## d) Paikka remonttiin. Riko jotain asetuksia.
 
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
 
-## f) (Vain Pasilan ryhmä -3015) Hae pari projektiin Moodlen keskustelusta. (Tästä alakohdasta f ei tarvitse tehdä vaiheittaista teknistä raporttia, riittää kun toteat, että pari on hankittu.)
+## f) Hae pari projektiin Moodlen keskustelusta.
 
 ## Lähteet
 
