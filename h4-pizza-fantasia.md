@@ -1,5 +1,9 @@
 # h4 Pizza Fantasia
 
+### Harjoituksen ympäristö
+
+Tein kaikki tehtävät paikallisella debian 13 "trixie" virtuaalikoneella. Host-järjestelmänä Linux Mint ja virtuaalisointiympäristönä toimi QEMU, hypervisorina kvm. Virtuaalikoneelle allokoituna 4 prosessoria ja 6gb muistia sekä 50gb levytilaa.
+
 ## x) Lue ja tiivistä - Karvinen, T 2024 Configuration Management of Distributed Systems over Unreliable and Hostile Networks
 
 ### 4.12.1 Size and complexity of some DSLs
@@ -20,7 +24,7 @@
 * Tärkeimmät ominaisuudet saadaan toteutettua pienellä määrällä funktioita: `package, file, service, user, group, directory, symlink`.
 * Muutaman ydinfunktion avulla voidaan rakentaa haluttuja alemman tason funktioita.
 
-## a) Räpylä. Asenna itse valitsemasi demoni käsin. Jokin muu kuin tunnilla tai kotitehtävissä aiemmin asennettu
+## a) Räpylä. Asenna itse valitsemasi demoni käsin. Jokin muu kuin tunnilla tai kotitehtävissä aiemmin asennettu.
 
 ## b) Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
@@ -36,7 +40,7 @@ Minun ei tarvinnut hakea paria moodlesta, sillä sovin jo tunnilla kaverin kanss
 
 ## Lähteet
 
-Karvinen, T 2024. PHD thesis. Configuration Management of Distributed Systems over Unreliable and Hostile Networks kohdat 4.12.1, 4.12.2 ja 4.12.3.1 Luettu 24.11.2026. 
+Karvinen, T 2024. PHD thesis. Configuration Management of Distributed Systems over Unreliable and Hostile Networks. Kohdat 4.12.1, 4.12.2 ja 4.12.3.1 Luettu 24.11.2026. 
 Ladattavissa: https://westminsterresearch.westminster.ac.uk/item/w7vvz/configuration-management-of-distributed-systems-over-unreliable-and-hostile-networks
 
 Karvinen, T 2026 Palvelinten Hallinta h4 Pizza Fantasia. Luettu 24.11.2026. Luettavissa: https://terokarvinen.com/palvelinten-hallinta/
