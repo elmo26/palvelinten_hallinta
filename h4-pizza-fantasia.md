@@ -110,6 +110,8 @@ Kuvassa näkyy konfiguraatiotiedostoon ajettu kommentti. Alemmassa kuvassa puole
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/f88b4b96-b1f2-4a71-8022-e640a9cc0cfb" />
 Kuva 4. porttinumero
 
+<img width="2880" height="1800" alt="mariadb" src="https://github.com/user-attachments/assets/7e87b560-9ee5-4c17-bc39-ee7bd2a10241" />
+Kuva 5.
 
 ## d) Paikka remonttiin. Riko jotain asetuksia.
 
