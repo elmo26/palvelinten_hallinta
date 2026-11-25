@@ -98,7 +98,9 @@ Tämän tein siksi, jotta kaikki asetukset varmasti menevät päälle uudelleenk
 Tämän jälkeen ajoin komennon `ansible-playbook site.yml`
 
 <img width="2880" height="1720" alt="image" src="https://github.com/user-attachments/assets/70d0ab48-345b-4679-b7eb-5a5fbdb28c49" />
-Kuva 3. Ansiben
+Kuva 3. Ansiben ajo
+
+Kuvassa näkyy konfiguraatiotiedostoon ajettu kommentti. Alemmassa kuvassa puolestaan näkyy kuunteleva portti `3307`, joka konfiguroitiin tiedostoon myös.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/f88b4b96-b1f2-4a71-8022-e640a9cc0cfb" />
 Kuva 4. porttinumero
@@ -106,6 +108,7 @@ Kuva 4. porttinumero
 
 ## d) Paikka remonttiin. Riko jotain asetuksia.
 
+Tässä kohtaa lähdin hajoittamaan luotua konfiguraatiota polussa `/etc/mysql/my.cnf` eli mariadb:n konfiguraatiotiedostossa.
 
 
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
