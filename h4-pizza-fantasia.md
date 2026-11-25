@@ -110,6 +110,8 @@ Kuva 4. porttinumero
 
 Tässä kohtaa lähdin hajoittamaan luotua konfiguraatiota polussa `/etc/mysql/my.cnf` eli mariadb:n konfiguraatiotiedostossa.
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/d8617e98-5caf-46ae-baeb-d2b35d0cbb35" />
+Kuva 5. Rikottu konffitiedosto.
 
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
 
