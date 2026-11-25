@@ -26,6 +26,16 @@ Tein kaikki tehtävät paikallisella debian 13 "trixie" virtuaalikoneella. Host-
 
 ## a) Räpylä. Asenna itse valitsemasi demoni käsin. Jokin muu kuin tunnilla tai kotitehtävissä aiemmin asennettu.
 
+Päätin asentaa dhcp-serverin ja tarkemmin sanottuna udhcpd:n.
+Päivitin pakettilistat, päivitin nykyiset paketit ja sitten asensin udhcpd-paketin käsin.
+
+````
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install udhcpd
+````
+Sitten tarkistin vielä asennuksen onnistumisen katsomalla udhcpd:n statuksen komennolla `systemctl status udhcpd.service`
+
 ## b) Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
 ## c) Asetus. Muuta asetustiedostoa herralla ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
