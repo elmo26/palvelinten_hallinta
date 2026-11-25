@@ -116,19 +116,20 @@ Tässä vielä todennus siitä, että mariadb, pyörii asetetun portin päällä
 
 ## d) Paikka remonttiin. Riko jotain asetuksia.
 
-Tässä kohtaa lähdin hajoittamaan luotua konfiguraatiota polussa `/etc/mysql/my.cnf` eli mariadb:n konfiguraatiotiedostossa.
+Tässä kohtaa lähdin hajoittamaan luotua konfiguraatiota polussa `/etc/mysql/my.cnf` eli mariadb:n konfiguraatiotiedostossa. Vaihdoin kommentiksi siansaksaa ja portiksi 1111. Kuvan alareunassa myöskin lukee tiedoston polku sekä se, että tiedosto tallennettiin.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/d8617e98-5caf-46ae-baeb-d2b35d0cbb35" />
 
 Kuva 5. Rikottu konffitiedosto.
 
-Vaihdoin kommentiksi siansaksaa ja portiksi `1111`. Kuvan alareunassa myöskin lukee tiedoston polku sekä se, että tiedosto tallennettiin.
+Tämän jälkeen ajoin taas komennon `ansible-playbook site.yml` ja varmistin, että asetukset tulivat voimaan. Kuvasta näkee, että portti millä palvelu pyörii, on 3307 ja tiedostosta on grepattu myös tekstikohta, joka sinne lisättiin ansiblen avulla. Rikottu tiedosto palautettiin siis ansiblen avulla alkuperäiseen tilaansa.
+
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9e3160d1-adc2-45f6-8e08-7b04d92d189b" />
 
 Kuva 6. Ansiblen ajo, asetusten muuttaminen rikkomisen jälkeen.
 
-Alemmasta kuvasta näkee, että portti millä palvelu pyörii, on 3307 ja tiedostosta on grepattu myös tekstikohta, joka sinne lisättiin ansiblen avulla. Rikottu tiedosto palautettiin siis ansiblen avulla alkuperäiseen tilaansa.
+
 
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
 
