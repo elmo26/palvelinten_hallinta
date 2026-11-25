@@ -59,7 +59,9 @@ Siirryin ansiblen kotihakemistoon eli `pwd=home/user/ansible` Loin ansibleen uud
 Sitten lisäsin vielä roolin `mariadb` `site.yml` -tiedostoon ja ajoin komennon `ansible-playbook site.yml`.
 
 <img width="2880" height="1720" alt="image" src="https://github.com/user-attachments/assets/0b3b4e79-014f-46c7-bde1-7949f3b72f62" />
-Kuva 2.
+Kuva 2. mariadb:n asennus ansiblella.
+
+Kuten kuvasta näkyy, mariadb:n asennus onnistui ansiblen avulla `changed=1`.
 
 
 ## c) Asetus. Muuta asetustiedostoa herralla ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
