@@ -66,10 +66,10 @@ Kuten kuvasta näkyy, mariadb:n asennus onnistui ansiblen avulla `changed=1`.
 
 ## c) Asetus. Muuta asetustiedostoa herralla ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
-MariaDB:n konfiguraatiotiedosto on polussa `etc/mysql/my.cnf` (MariaDB 2026). Katsoin konffitiedostosta että mitä siellä jo on ja päätin kopioida kongiguraatiotiedoston ja lisätä sinne kommentin "tämä on tehty ansiblella".
+MariaDB:n konfiguraatiotiedosto on polussa `etc/mysql/my.cnf` (MariaDB 2026). Katsoin konffitiedostosta että mitä siellä jo on ja päätin kopioida kongiguraatiotiedoston ja lisätä sinne kommentin "tämä on tehty ansiblella" sekä muuttaa .
 
 Ensin kopioin konfiguraatiotiedoston komennolla `cp /etc/mysql/my.cnf roles/mariadb/files/my.cnf` ansibleen, muokkasin ansibleen kopiomaani konfiguaartiotiedostoa lisäämällä sinne kommentin "tämä on tehty ansiblella".
-Tämän jälkeen lisäsin `roles/mariadb/tasks/main.yml` tiedostoon seuraavat asiat:
+seä muutin kohdasta [client-server] oletusportin `3306` portiksi `3307` Tämän jälkeen lisäsin `roles/mariadb/tasks/main.yml` tiedostoon seuraavat asiat:
 
 ````
 -name: kopioi mariadb konfiguraatiotiedosto
@@ -79,12 +79,17 @@ Tämän jälkeen lisäsin `roles/mariadb/tasks/main.yml` tiedostoon seuraavat as
    owner: rauski
    group: rauski
    mode: 0644
+ notify: foo
 ````
 
-Sitten lisäsin vielä mariadb:n handlers-kansion `maihn.yml` tiedostoon seuraavat asiat:
+Tässä kopioin muokatun version konfiguraatiotiedostosta `files/my.cnf` konfiguraatiotiedoston polkuun `/etc/mysql/my.cnf`, sekä asetin omistajan ja ryhmän `rauski` ja oikeudet `0644` eli `-rw-r--r--`.
+Nofiy-kohta kutsuu handleria (alla handler) ja uudelleenkäynnistää palvelun ajettaessa.
+
+Sitten lisäsin vielä mariadb:n handlers-kansion `main.yml` tiedostoon seuraavat asiat:
 
 ````
-- service:
+- name: foo
+  service:
     name: mariadb
     state: restarted
 ````
@@ -97,6 +102,8 @@ Kuva 3. Ansiben
 
 
 ## d) Paikka remonttiin. Riko jotain asetuksia.
+
+
 
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
 
