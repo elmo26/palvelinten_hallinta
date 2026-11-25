@@ -113,6 +113,8 @@ Tässä kohtaa lähdin hajoittamaan luotua konfiguraatiota polussa `/etc/mysql/m
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/d8617e98-5caf-46ae-baeb-d2b35d0cbb35" />
 Kuva 5. Rikottu konffitiedosto.
 
+Kuten kuvasta näke, vaihdoin kommentiksi siansaksaa ja portiksi `1111`. Kuvan alareunassa myöskin lukee tiedoston polku sekä se, että tiedosto tallennettiin.
+
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
 
 ## f) Hae pari projektiin Moodlen keskustelusta.
