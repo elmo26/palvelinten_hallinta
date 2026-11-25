@@ -44,7 +44,20 @@ Lopuksi poistin vielä mariadb:n asennuksen komennolla `sudo apt-get purge maria
 
 ## b) Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
-Siirryin ansiblen kotihakemistoon eli `pwd=home/user/ansible` Loin ansibleen uuden roolin mariadb:lle ja kansiot `tasks` ja `handlers` sen asennusta ja hallintaa varten komennolla `mkdir -p roles/mariadb/{tasks,handlers}`.
+Siirryin ansiblen kotihakemistoon eli `pwd=home/user/ansible` Loin ansibleen uuden roolin mariadb:lle ja kansiot `tasks` ja `handlers` sen asennusta ja hallintaa varten komennolla `mkdir -p roles/mariadb/{tasks,handlers}`. Sitten loin uuden main.yml -tiedoston komennolla `micro roles/mariadb/tasks/main.yml` ja lisäsin sinne seuraavat asiat:
+
+````
+- apt:
+    name: mariadb-server
+    state: present
+
+- service:
+    name: mariadb
+    state: started
+    enabled: true
+````
+Sitten lisäsin vielä roolin `mariadb` `site.yml` -tiedostoon ja ajoin komennon `ansible-playbook site.yml`.
+
 
 ## c) Asetus. Muuta asetustiedostoa herralla ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
