@@ -90,6 +90,11 @@ Sitten lisäsin vielä mariadb:n handlers-kansion `maihn.yml` tiedostoon seuraav
 ````
 Tämän tein siksi, jotta kaikki asetukset varmasti menevät päälle uudelleenkäynnistyksen myötä.
 
+Tämän jälkeen ajoin komennon `ansible-playbook site.yml`
+
+<img width="2880" height="1720" alt="image" src="https://github.com/user-attachments/assets/70d0ab48-345b-4679-b7eb-5a5fbdb28c49" />
+Kuva 3. Ansiben
+
 
 ## d) Paikka remonttiin. Riko jotain asetuksia.
 
