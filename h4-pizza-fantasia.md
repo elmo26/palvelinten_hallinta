@@ -37,14 +37,16 @@ sudo apt-get install mariadb-server
 Sitten tarkistin vielä asennuksen onnistumisen katsomalla mariadb:n statuksen komennolla `sudo systemctl status mariadb`.
 
 mariadb.service: enabled. Paketin asennus onnistui.
+
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/3046e383-e29a-42c5-94bf-b9f8920d44de" />
+
 Kuva 1. mariadb status.
 
 Lopuksi poistin vielä mariadb:n asennuksen komennolla `sudo apt-get purge mariadb`, sillä asentaisin sen uudelleen ansiblella.
 
 ## b) Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
-Siirryin ansiblen kotihakemistoon eli `pwd=home/user/ansible` Loin ansibleen uuden roolin mariadb:lle ja kansiot `tasks` ja `handlers` sen asennusta ja hallintaa varten komennolla `mkdir -p roles/mariadb/{tasks,handlers,files}`. Sitten loin uuden main.yml -tiedoston komennolla `micro roles/mariadb/tasks/main.yml` ja lisäsin sinne seuraavat asiat:
+Siirryin ansiblen kotihakemistoon eli `pwd=home/user/ansible` Loin ansibleen uuden roolin mariadb:lle ja kansiot `tasks`, `handlers` sekä `file` sen asennusta ja hallintaa varten komennolla `mkdir -p roles/mariadb/{tasks,handlers,files}`. Sitten loin uuden main.yml -tiedoston komennolla `micro roles/mariadb/tasks/main.yml` ja lisäsin sinne seuraavat asiat:
 
 ````
 - apt:
@@ -56,9 +58,12 @@ Siirryin ansiblen kotihakemistoon eli `pwd=home/user/ansible` Loin ansibleen uud
     state: started
     enabled: true
 ````
+Tässä siis valittu paketti aptilla, varmistettu että palvelu on päällä `state:started`.
+
 Sitten lisäsin vielä roolin `mariadb` `site.yml` -tiedostoon ja ajoin komennon `ansible-playbook site.yml`.
 
 <img width="2880" height="1720" alt="image" src="https://github.com/user-attachments/assets/0b3b4e79-014f-46c7-bde1-7949f3b72f62" />
+
 Kuva 2. mariadb:n asennus ansiblella.
 
 Kuten kuvasta näkyy, mariadb:n asennus onnistui ansiblen avulla `changed=1`.
@@ -66,10 +71,10 @@ Kuten kuvasta näkyy, mariadb:n asennus onnistui ansiblen avulla `changed=1`.
 
 ## c) Asetus. Muuta asetustiedostoa herralla ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
-MariaDB:n konfiguraatiotiedosto on polussa `etc/mysql/my.cnf` (MariaDB 2026). Katsoin konffitiedostosta että mitä siellä jo on ja päätin kopioida kongiguraatiotiedoston ja lisätä sinne kommentin "tämä on tehty ansiblella" sekä muuttaa .
+MariaDB:n konfiguraatiotiedosto on polussa `etc/mysql/my.cnf` (MariaDB 2026). Katsoin konffitiedostosta että mitä siellä jo on ja päätin lisätä sinne kommentin "tämä on tehty ansiblella" sekä muuttaa palvelun portin `3306 - > 3307`.
 
-Ensin kopioin konfiguraatiotiedoston komennolla `cp /etc/mysql/my.cnf roles/mariadb/files/my.cnf` ansibleen, muokkasin ansibleen kopiomaani konfiguaartiotiedostoa lisäämällä sinne kommentin "tämä on tehty ansiblella".
-seä muutin kohdasta [client-server] oletusportin `3306` portiksi `3307` Tämän jälkeen lisäsin `roles/mariadb/tasks/main.yml` tiedostoon seuraavat asiat:
+Ensin kopioin konfiguraatiotiedoston komennolla `cp /etc/mysql/my.cnf roles/mariadb/files/my.cnf` ansibleen, muokkasin ansibleen kopiomaani konfiguraatiotiedostoa lisäämällä sinne kommentin "tämä on tehty ansiblella".
+sekä muutin kohdasta [client-server] oletusportin `3306` portiksi `3307` Tämän jälkeen lisäsin `roles/mariadb/tasks/main.yml` tiedostoon seuraavat asiat:
 
 ````
 -name: kopioi mariadb konfiguraatiotiedosto
@@ -82,7 +87,7 @@ seä muutin kohdasta [client-server] oletusportin `3306` portiksi `3307` Tämän
  notify: foo
 ````
 
-Tässä kopioin muokatun version konfiguraatiotiedostosta `files/my.cnf` konfiguraatiotiedoston polkuun `/etc/mysql/my.cnf`, sekä asetin omistajan ja ryhmän `rauski` ja oikeudet `0644` eli `-rw-r--r--`.
+Tässä kopioin muokatun version konfiguraatiotiedostosta `roles/mariadb/files/my.cnf` konfiguraatiotiedoston polkuun `/etc/mysql/my.cnf`, sekä asetin omistajan ja ryhmän `rauski` ja oikeudet `0644` eli `-rw-r--r--`.
 Nofiy-kohta kutsuu handleria (alla handler) ja uudelleenkäynnistää palvelun ajettaessa.
 
 Sitten lisäsin vielä mariadb:n handlers-kansion `main.yml` tiedostoon seuraavat asiat:
@@ -93,7 +98,7 @@ Sitten lisäsin vielä mariadb:n handlers-kansion `main.yml` tiedostoon seuraava
     name: mariadb
     state: restarted
 ````
-Tämän tein siksi, jotta kaikki asetukset varmasti menevät päälle uudelleenkäynnistyksen myötä.
+Tämän tein siksi, että kaikki asetukset varmasti menevät päälle uudelleenkäynnistyksen myötä.
 
 Tämän jälkeen ajoin komennon `ansible-playbook site.yml`
 
