@@ -118,7 +118,9 @@ Kuten kuvasta näke, vaihdoin kommentiksi siansaksaa ja portiksi `1111`. Kuvan a
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9e3160d1-adc2-45f6-8e08-7b04d92d189b" />
 
-Kuva 6. Ansiblen ajo, asetusten muuttaminen rikkomisen jälkeen
+Kuva 6. Ansiblen ajo, asetusten muuttaminen rikkomisen jälkeen.
+
+Alemmasta kuvasta näkee, että portti millä palvelu pyörii, on 3307 ja tiedostosta on grepattu myös tekstikohta, joka sinne lisättiin ansiblen avulla. Rikottu tiedosto palautettiin siis ansiblen avulla alkuperäiseen tilaansa.
 
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
 
