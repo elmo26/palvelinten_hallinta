@@ -122,7 +122,7 @@ Tässä kohtaa lähdin hajoittamaan luotua konfiguraatiota polussa `/etc/mysql/m
 
 Kuva 5. Rikottu konffitiedosto.
 
-Kuten kuvasta näke, vaihdoin kommentiksi siansaksaa ja portiksi `1111`. Kuvan alareunassa myöskin lukee tiedoston polku sekä se, että tiedosto tallennettiin.
+Vaihdoin kommentiksi siansaksaa ja portiksi `1111`. Kuvan alareunassa myöskin lukee tiedoston polku sekä se, että tiedosto tallennettiin.
 
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/9e3160d1-adc2-45f6-8e08-7b04d92d189b" />
 
@@ -132,12 +132,14 @@ Alemmasta kuvasta näkee, että portti millä palvelu pyörii, on 3307 ja tiedos
 
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
 
+Ajoin ansiblen heti edellisen ajon jälkeen uudelleen todistaakseni että tilani on idempotentti. Kuten kuvasta näkyy, mitään muutoksia ei toisella ajokerralla tehty `changed = 0`, joten tila on idempotentti.
+
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/7fe0be8e-4b36-405b-b8df-cc1cbf2948c7" />
 kuva 7. tila osoitettu idempotentiksi.
 
 ## f) Hae pari projektiin Moodlen keskustelusta.
 
-Minun ei tarvinnut hakea paria moodlesta, sillä sovin jo tunnilla kaverin kanssa että teemme projektin yhdessä. Ilmoitin parin moodlen keskustelupalstalle.
+Pari ilmoitettu moodlen keskustelupalstalle.
 
 ## Lähteet
 
