@@ -124,6 +124,9 @@ Alemmasta kuvasta näkee, että portti millä palvelu pyörii, on 3307 ja tiedos
 
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
 
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/7fe0be8e-4b36-405b-b8df-cc1cbf2948c7" />
+kuva 7. tila osoitettu idempotentiksi.
+
 ## f) Hae pari projektiin Moodlen keskustelusta.
 
 Minun ei tarvinnut hakea paria moodlesta, sillä sovin jo tunnilla kaverin kanssa että teemme projektin yhdessä. Ilmoitin parin moodlen keskustelupalstalle.
