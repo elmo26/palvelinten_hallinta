@@ -33,7 +33,11 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install mariadb-server
 ````
+
 Sitten tarkistin vielä asennuksen onnistumisen katsomalla udhcpd:n statuksen komennolla `sudo systemctl status mariadb`
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/3046e383-e29a-42c5-94bf-b9f8920d44de" />
+Kuva 1. mariadb status.
+
 
 ## b) Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
