@@ -26,15 +26,14 @@ Tein kaikki tehtävät paikallisella debian 13 "trixie" virtuaalikoneella. Host-
 
 ## a) Räpylä. Asenna itse valitsemasi demoni käsin. Jokin muu kuin tunnilla tai kotitehtävissä aiemmin asennettu.
 
-Päätin asentaa dhcp-serverin ja tarkemmin sanottuna udhcpd:n.
-Päivitin pakettilistat, päivitin nykyiset paketit ja sitten asensin udhcpd-paketin käsin.
+Päätin asentaa mariadb tietokantojen hallintajärjestlemän. Päivitin pakettilistat, päivitin nykyiset paketit ja sitten asensin mariadb-paketin käsin.
 
 ````
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install udhcpd
+sudo apt-get install mariadb-server
 ````
-Sitten tarkistin vielä asennuksen onnistumisen katsomalla udhcpd:n statuksen komennolla `systemctl status udhcpd.service`
+Sitten tarkistin vielä asennuksen onnistumisen katsomalla udhcpd:n statuksen komennolla `sudo systemctl status mariadb`
 
 ## b) Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
