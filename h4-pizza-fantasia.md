@@ -71,7 +71,7 @@ Kuten kuvasta näkyy, mariadb:n asennus onnistui ansiblen avulla `changed=1`.
 
 ## c) Asetus. Muuta asetustiedostoa herralla ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
-MariaDB:n konfiguraatiotiedosto on polussa `etc/mysql/my.cnf` (MariaDB 2026). Katsoin konffitiedostosta että mitä siellä jo on ja päätin lisätä sinne kommentin "tämä on tehty ansiblella" sekä muuttaa palvelun portin `3306 - > 3307`.
+MariaDB:n konfiguraatiotiedosto on polussa `etc/mysql/my.cnf` (MariaDB 2026). Katsoin konffitiedostosta että mitä siellä jo on ja päätin lisätä sinne kommentin "tämä on tehty ansiblella" sekä muuttaa palvelun portin `3306 - > 3307`. Muuten pidin tiedoston oletusarvoissa enkä poistanut tai muuttanut mitään muuta.
 
 Ensin kopioin konfiguraatiotiedoston komennolla `cp /etc/mysql/my.cnf roles/mariadb/files/my.cnf` ansibleen, muokkasin ansibleen kopiomaani konfiguraatiotiedostoa lisäämällä sinne kommentin "tämä on tehty ansiblella".
 sekä muutin kohdasta [client-server] oletusportin `3306` portiksi `3307` Tämän jälkeen lisäsin `roles/mariadb/tasks/main.yml` tiedostoon seuraavat asiat:
@@ -107,11 +107,12 @@ Kuva 3. Ansiben ajo
 
 Kuvassa näkyy konfiguraatiotiedostoon ajettu kommentti. Alemmassa kuvassa puolestaan näkyy kuunteleva portti `3307`, joka konfiguroitiin tiedostoon myös.
 
-<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/f88b4b96-b1f2-4a71-8022-e640a9cc0cfb" />
-Kuva 4. porttinumero
-
 <img width="2880" height="1800" alt="mariadb" src="https://github.com/user-attachments/assets/7e87b560-9ee5-4c17-bc39-ee7bd2a10241" />
-Kuva 5.
+
+Kuva 4.
+
+Tässä vielä todennus siitä, että mariadb, pyörii asetetun portin päällä kuten konfiguraatiossa määrittelin.
+
 
 ## d) Paikka remonttiin. Riko jotain asetuksia.
 
