@@ -44,7 +44,7 @@ Lopuksi poistin vielä mariadb:n asennuksen komennolla `sudo apt-get purge maria
 
 ## b) Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
-Siirryin ansiblen kotihakemistoon eli `pwd=home/user/ansible` Loin ansibleen uuden roolin mariadb:lle ja kansiot `tasks` ja `handlers` sen asennusta ja hallintaa varten komennolla `mkdir -p roles/mariadb/{tasks,handlers}`. Sitten loin uuden main.yml -tiedoston komennolla `micro roles/mariadb/tasks/main.yml` ja lisäsin sinne seuraavat asiat:
+Siirryin ansiblen kotihakemistoon eli `pwd=home/user/ansible` Loin ansibleen uuden roolin mariadb:lle ja kansiot `tasks` ja `handlers` sen asennusta ja hallintaa varten komennolla `mkdir -p roles/mariadb/{tasks,handlers,files}`. Sitten loin uuden main.yml -tiedoston komennolla `micro roles/mariadb/tasks/main.yml` ja lisäsin sinne seuraavat asiat:
 
 ````
 - apt:
@@ -66,6 +66,31 @@ Kuten kuvasta näkyy, mariadb:n asennus onnistui ansiblen avulla `changed=1`.
 
 ## c) Asetus. Muuta asetustiedostoa herralla ja aja ansible uudestaan. Osoita, että asetukset tulivat käyttöön.
 
+MariaDB:n konfiguraatiotiedosto on polussa `etc/mysql/my.cnf` (MariaDB 2026). Katsoin konffitiedostosta että mitä siellä jo on ja päätin kopioida kongiguraatiotiedoston ja lisätä sinne kommentin "tämä on tehty ansiblella".
+
+Ensin kopioin konfiguraatiotiedoston komennolla `cp /etc/mysql/my.cnf roles/mariadb/files/my.cnf` ansibleen, muokkasin ansibleen kopiomaani konfiguaartiotiedostoa lisäämällä sinne kommentin "tämä on tehty ansiblella".
+Tämän jälkeen lisäsin `roles/mariadb/tasks/main.yml` tiedostoon seuraavat asiat:
+
+````
+-name: kopioi mariadb konfiguraatiotiedosto
+ copy:
+   src: my.cnf
+   dest: /etc/mysql/my.cnf
+   owner: rauski
+   group: rauski
+   mode: 0644
+````
+
+Sitten lisäsin vielä mariadb:n handlers-kansion `maihn.yml` tiedostoon seuraavat asiat:
+
+````
+- service:
+    name: mariadb
+    state: restarted
+````
+Tämän tein siksi, jotta kaikki asetukset varmasti menevät päälle uudelleenkäynnistyksen myötä.
+
+
 ## d) Paikka remonttiin. Riko jotain asetuksia.
 
 ## e) Idempotentti. Osoita, että tilasi on idempotentti.
@@ -80,3 +105,6 @@ Karvinen, T 2024. PHD thesis. Configuration Management of Distributed Systems ov
 Ladattavissa: https://westminsterresearch.westminster.ac.uk/item/w7vvz/configuration-management-of-distributed-systems-over-unreliable-and-hostile-networks
 
 Karvinen, T 2026 Palvelinten Hallinta h4 Pizza Fantasia. Luettu 24.11.2026. Luettavissa: https://terokarvinen.com/palvelinten-hallinta/
+
+MariaDB 2026. Configuring MariaDB with Option Files, Luettu 25.11.2026. 
+Luettavissa: https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files
