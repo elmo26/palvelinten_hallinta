@@ -40,6 +40,7 @@ mariadb.service: enabled. Paketin asennus onnistui.
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/3046e383-e29a-42c5-94bf-b9f8920d44de" />
 Kuva 1. mariadb status.
 
+Lopuksi poistin vielä mariadb:n asennuksen komennolla `sudo apt-get purge mariadb`, sillä asentaisin sen uudelleen ansiblella.
 
 ## b) Automaatti. Automatisoi valitsemasi demonin asennus Ansiblella.
 
